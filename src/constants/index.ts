@@ -51,11 +51,11 @@ export const navLinks: TNavLink[] = [
 
 const services: TService[] = [
   {
-    title: "Frontend Development",
+    title: "Frontend",
     icon: web,
   },
   {
-    title: "Backend Development",
+    title: "Backend",
     icon: mobile,
   },
   {
@@ -168,7 +168,7 @@ const experiences: TExperience[] = [
     companyName: "IE Networks",
     icon: IE,
     iconBg: "#E6DEDD",
-    date: "Mar 2024 - May",
+    date: "Mar 2024 - May 2024",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
