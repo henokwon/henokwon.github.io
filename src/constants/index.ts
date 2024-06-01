@@ -155,7 +155,7 @@ const experiences: TExperience[] = [
     companyName: "Horizon Tech ICT Solutions",
     icon: Horizon,
     iconBg: "#383E56",
-    date: "Nov 2022 - Mar 2024",
+    date: "Nov 2022 - Present",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
@@ -164,11 +164,11 @@ const experiences: TExperience[] = [
     ],
   },
   {
-    title: "System and Cloud Engineer",
+    title: "GTP- System and Cloud Engineer",
     companyName: "IE Networks",
     icon: IE,
     iconBg: "#E6DEDD",
-    date: "Mar 2024 - Present",
+    date: "Mar 2024 - May",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
