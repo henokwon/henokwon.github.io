@@ -27,7 +27,7 @@ import {
   carrent,
   jobit,
   tripguide,
-  threejs,
+  golang,
   IE,
   Horizon,
   Freelancer,
@@ -51,21 +51,18 @@ export const navLinks: TNavLink[] = [
 
 const services: TService[] = [
   {
-    title: "Frontend",
+    title: "MLOps",
     icon: web,
   },
   {
-    title: "Backend",
+    title: "Full-Stack | Backend heavy",
     icon: mobile,
   },
   {
-    title: "DevSOps",
+    title: "DevOps",
     icon: backend,
   },
-  {
-    title: "Data Science",
-    icon: creator,
-  },
+  
 ];
 
 const technologies: TTechnology[] = [
@@ -106,8 +103,8 @@ const technologies: TTechnology[] = [
     icon: mongodb,
   },
   {
-    name: "Three JS",
-    icon: threejs,
+    name: "Golang",
+    icon: golang,
   },
   {
     name: "git",

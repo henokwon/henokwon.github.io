@@ -114,7 +114,7 @@ create. Any contributions you make are **greatly appreciated**.
 
 To fix a bug or enhance an existing module, follow these steps:
 
-1. Fork the original repo ""
+1. Fork this repo
 2. Create a new branch (`git checkout -b improve-feature`)
 3. Make the appropriate changes in the files
 4. Commit your changes (`git commit -am 'Improve feature'`)
