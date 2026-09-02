@@ -1,32 +1,69 @@
 import { motion } from "framer-motion";
 
 import { styles } from "../../constants/styles";
-import { ComputersCanvas } from "../canvas";
+import { TheoryEngineCanvas } from "../canvas";
 import { config } from "../../constants/config";
+
+const runtimeSignals = [
+  ["∴", "Runtime", "Space is rendered."],
+  ["⌁", "Lag", "Mass slows frames."],
+  ["◇", "Collapse", "Observation compiles."],
+];
 
 const Hero = () => {
   return (
-    <section className={`relative mx-auto h-screen w-full`}>
+    <section className="relative mx-auto h-screen w-full overflow-hidden">
+      <div className="hero-runtime-aura" />
       <div
-        className={`absolute inset-0 top-[120px] mx-auto max-w-7xl ${styles.paddingX} flex flex-row items-start gap-5`}
+        className={`absolute inset-x-0 top-[86px] z-10 mx-auto max-w-7xl ${styles.paddingX}`}
       >
-        <div className="mt-5 flex flex-col items-center justify-center">
-          <div className="h-5 w-5 rounded-full bg-[#915EFF]" />
-          <div className="violet-gradient h-40 w-1 sm:h-80" />
-        </div>
+        <div className="flex w-full flex-col items-center text-center">
+          <div className="max-w-4xl">
+            <h1 className={`${styles.heroHeadText} text-white`}>
+              Hi, I'm <span className="text-[#915EFF]">{config.hero.name}</span>
+              <span className="mt-3 block text-[18px] font-bold leading-normal tracking-[0.16em] text-white/55 sm:text-[24px]">
+                ሄኖክ · ܚܢܘܟ
+              </span>
+            </h1>
+            <p className={`${styles.heroSubText} text-white-100 mt-2`}>
+              {config.hero.p[0]}
+            </p>
+          </div>
 
-        <div>
-          <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I'm <span className="text-[#915EFF]">{config.hero.name}</span>
-          </h1>
-          <p className={`${styles.heroSubText} text-white-100 mt-2`}>
-            {config.hero.p[0]} <br className="hidden sm:block" />
-            {config.hero.p[1]}
-          </p>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, y: 28 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ delay: 0.55, duration: 0.9 }}
+            className="hero-theory-shell mt-8 w-full"
+          >
+            <div className="hero-theory-console">
+              <div className="hero-console-bar">
+                <span>ሄኖክ.RUNTIME</span>
+                <span>LIVE-RENDER TEST</span>
+              </div>
+
+              <div className="hero-theory-canvas">
+                <TheoryEngineCanvas />
+              </div>
+
+              <div className="mt-4 grid gap-3 sm:grid-cols-3">
+                {runtimeSignals.map(([number, title, description]) => (
+                  <div key={title} className="hero-signal-row">
+                    <span>{number}</span>
+                    <div>
+                      <strong>{title}</strong>
+                      <p>{description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="hero-test-ribbon">Δs² = (ÛcΔt)² − ΣΔxᵢ² − Ωcache</div>
+
+            </div>
+          </motion.div>
         </div>
       </div>
-
-      <ComputersCanvas />
 
       <div className="xs:bottom-10 absolute bottom-32 flex w-full items-center justify-center">
         <a href="#about">

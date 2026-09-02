@@ -2,11 +2,12 @@ import { BrowserRouter } from "react-router-dom";
 
 import {
   About,
+  Consulting,
   Contact,
   Experience,
-  Feedbacks,
   Hero,
   Navbar,
+  SimulationLayer,
   Tech,
   Works,
   StarsCanvas,
@@ -24,6 +25,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <div className="bg-primary relative z-0">
+        <SimulationLayer />
         <div className="bg-hero-pattern bg-cover bg-center bg-no-repeat">
           <Navbar />
           <Hero />
@@ -32,7 +34,7 @@ const App = () => {
         <Experience />
         <Tech />
         <Works />
-        <Feedbacks />
+        <Consulting />
         <div className="relative z-0">
           <Contact />
           <StarsCanvas />

@@ -15,81 +15,68 @@ type TConfig = {
     p: string[];
   };
   contact: {
-    form: {
-      name: {
-        span: string;
-        placeholder: string;
-      };
-      email: {
-        span: string;
-        placeholder: string;
-      };
-      message: {
-        span: string;
-        placeholder: string;
-      };
-    };
   } & TSection;
   sections: {
     about: Required<TSection>;
     experience: TSection;
     feedbacks: TSection;
     works: Required<TSection>;
+    consulting: Required<TSection>;
   };
 };
 
 export const config: TConfig = {
   html: {
-    title: "Henok- Full Stack Developer | DevOps Engineer",
-    fullName: "Henok Wondu",
+    title: "Henok | Senior Software Engineer",
+    fullName: "Henok",
     email: "henokwon@gmail.com",
   },
   hero: {
-    name: "Henok Wondu",
-    p: ["Back-End heavy Full Stack Developer"],
+    name: "Henok",
+    p: ["Senior Software Engineer"],
   },
   contact: {
-    p: "Get in touch",
-    h2: "Contact.",
-    form: {
-      name: {
-        span: "Your Name",
-        placeholder: "What's your name?",
-      },
-      email: { span: "Your Email", placeholder: "What's your email?" },
-      message: {
-        span: "Your Message",
-        placeholder: "What do you want to say?",
-      },
-    },
+    p: "Direct line",
+    h2: "Signal me.",
+    content:
+      "For serious engineering conversations, audits, deployments, or consulting work, reach me directly on WhatsApp or Telegram.",
   },
   sections: {
     about: {
-      p: "Introduction",
-      h2: "Overview.",
-      content: `I'm a skilled software developer with experience in TypeScript, Python, and
-      JavaScript, and expertise in frameworks like React, Node.js, Express.Js, Next.Js, Nest.Js, Django and
-      Three.js. I acquired great experience as a Full Stack Developer and DevOps
-      Engineer building and implementing automated deployment pipelines, monitoring and
-      debugging complex systems, and engaging with cross-functional teams to deliver high-quality
-      web apps. Let's work together to bring your ideas to life!`,
+      p: "Security-minded engineering",
+      h2: "Profile.",
+      content: `Senior Software Engineer and DevSecOps-focused platform engineer with a
+      backend-heavy foundation across cloud infrastructure, CI/CD automation, containerized
+      systems, API platforms, monitoring, disaster recovery, and secure delivery practices.
+      I work across AWS, Azure, Google Cloud, Linux, Docker, Kubernetes, Terraform, GitHub
+      Actions, Jenkins, Python, TypeScript, Go, and modern backend frameworks to build
+      reliable systems that are observable, compliant, recoverable, and production-ready.`,
     },
     experience: {
-      p: "What I have done so far",
-      h2: "Work Experience.",
+      p: "Systems I have delivered and secured",
+      h2: "Experience.",
     },
     feedbacks: {
       p: "What others say",
       h2: "Testimonials.",
     },
     works: {
-      p: "My work",
-      h2: "Projects.",
-      content: `Following projects showcases my skills and experience through
-    real-world examples of my work. Each project is briefly described with
-    links to code repositories and live demos in it. It reflects my
-    ability to solve complex problems, work with different technologies,
-    and manage projects effectively.`,
+      p: "Proof from the field",
+      h2: "Production Signals.",
+      content: `A curated view of the systems that best represent my current direction:
+    national digital identity infrastructure, developer-platform automation, AI/RAG service
+    components, secure API integrations, observability, and DevSecOps workflows. Public
+    GitHub shows earlier foundations; these production signals show the senior platform
+    engineering story more clearly.`,
+    },
+    consulting: {
+      p: "Consulting & ventures",
+      h2: "Secure delivery for serious systems.",
+      content: `I help teams move serious systems from fragile delivery to secure,
+    observable, deployment-ready platforms. My consulting work focuses on backend
+    architecture, DevSecOps, cloud infrastructure, release automation, and production
+    reliability — while my founder track with Killa pushes that thinking into security
+    tooling for APIs, AI services, webhooks, and exposed admin surfaces.`,
     },
   },
 };

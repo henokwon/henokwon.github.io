@@ -13,7 +13,9 @@ import Experience from "./sections/Experience";
 import Works from "./sections/Works";
 import Feedbacks from "./sections/Feedbacks";
 import Contact from "./sections/Contact";
+import Consulting from "./sections/Consulting";
 import CanvasLoader from "./layout/Loader";
+import SimulationLayer from "./layout/SimulationLayer";
 
 export {
   Hero,
@@ -24,7 +26,9 @@ export {
   Works,
   Feedbacks,
   Contact,
+  Consulting,
   CanvasLoader,
+  SimulationLayer,
   EarthCanvas,
   BallCanvas,
   ComputersCanvas,

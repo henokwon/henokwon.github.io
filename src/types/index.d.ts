@@ -20,11 +20,11 @@ export type TTestimonial = {
 
 export type TProject = {
   description: string;
+  signal?: string;
   tags: {
     name: string;
     color: string;
   }[];
-  image: string;
   sourceCodeLink: string;
 } & Required<Pick<TCommonProps, "name">>;
 
