@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Henok favicon">
+  <defs>
+    <linearGradient id="g" x1="12" y1="8" x2="52" y2="58" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00cea8"/>
+      <stop offset="1" stop-color="#bf61ff"/>
+    </linearGradient>
+    <filter id="s" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity=".35"/>
+    </filter>
+  </defs>
+  <rect width="64" height="64" rx="18" fill="#050816"/>
+  <path
+    d="M32 8 50 16v13c0 13-7.7 22.6-18 27-10.3-4.4-18-14-18-27V16l18-8Z"
+    fill="url(#g)"
+    filter="url(#s)"
+  />
+  <path d="M22 21h6v8h8v-8h6v24h-6V35h-8v10h-6V21Z" fill="#fff"/>
+  <path d="M18 16 32 10l14 6" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="2"/>
+</svg>
