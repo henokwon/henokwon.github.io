@@ -75,7 +75,7 @@ export const config: TConfig = {
       content: `I help teams move serious systems from fragile delivery to secure,
     observable, deployment-ready platforms. My consulting work focuses on backend
     architecture, DevSecOps, cloud infrastructure, release automation, and production
-    reliability — while my founder track with Killa pushes that thinking into security
+    reliability — while my Killa architecture work pushes that thinking into security
     tooling for APIs, AI services, webhooks, and exposed admin surfaces.`,
     },
   },

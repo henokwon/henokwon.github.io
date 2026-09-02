@@ -415,6 +415,38 @@
   max-width: 540px;
 }
 
+.nav-avatar-node {
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  padding: 2px;
+  background:
+    conic-gradient(from 180deg, rgba(0, 206, 168, 0.95), rgba(145, 94, 255, 0.95), rgba(0, 206, 168, 0.95));
+  box-shadow:
+    0 0 22px rgba(0, 206, 168, 0.18),
+    0 0 36px rgba(145, 94, 255, 0.16);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.nav-avatar-node:hover {
+  transform: translateY(-1px) scale(1.04);
+  box-shadow:
+    0 0 28px rgba(0, 206, 168, 0.26),
+    0 0 48px rgba(145, 94, 255, 0.24);
+}
+
+.nav-avatar-node img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: inherit;
+  object-fit: cover;
+  object-position: center 18%;
+  background: #050816;
+}
+
 .hero-theory-console {
   position: relative;
   overflow: hidden;

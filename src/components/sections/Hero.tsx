@@ -21,9 +21,6 @@ const Hero = () => {
           <div className="max-w-4xl">
             <h1 className={`${styles.heroHeadText} text-white`}>
               Hi, I'm <span className="text-[#915EFF]">{config.hero.name}</span>
-              <span className="mt-3 block text-[18px] font-bold leading-normal tracking-[0.16em] text-white/55 sm:text-[24px]">
-                ሄኖክ · ܚܢܘܟ
-              </span>
             </h1>
             <p className={`${styles.heroSubText} text-white-100 mt-2`}>
               {config.hero.p[0]}

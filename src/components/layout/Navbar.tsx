@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 
 import { styles } from "../../constants/styles";
 import { navLinks } from "../../constants";
-import { logo, menu, close } from "../../assets";
-import { config } from "../../constants/config";
+import { menu, close } from "../../assets";
 
 const Navbar = () => {
   const [active, setActive] = useState<string | null>();
@@ -56,21 +55,31 @@ const Navbar = () => {
         scrolled ? "bg-primary" : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex w-full max-w-7xl items-center justify-between">
+      <div className="relative mx-auto flex w-full max-w-7xl items-center justify-center">
         <Link
           to="/"
-          className="flex items-center gap-2"
+          className="nav-avatar-node absolute left-0"
+          aria-label="Back to top"
           onClick={() => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt="logo" className="h-9 w-9 object-contain" />
-          <p className="flex cursor-pointer text-[18px] font-bold text-white ">
-            {config.html.title}
+          <img src="/avatar-henok.png" alt="Henok avatar" />
+        </Link>
+
+        <Link
+          to="/"
+          className="flex items-center"
+          onClick={() => {
+            window.scrollTo(0, 0);
+          }}
+        >
+          <p className="flex cursor-pointer text-[18px] font-bold tracking-[0.16em] text-white">
+            ሄኖክ · ܚܢܘܟ
           </p>
         </Link>
 
-        <ul className="hidden list-none flex-row gap-10 sm:flex">
+        <ul className="absolute right-0 hidden list-none flex-row gap-10 sm:flex">
           {navLinks.map((nav) => (
             <li
               key={nav.id}
@@ -83,7 +92,7 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <div className="flex flex-1 items-center justify-end sm:hidden">
+        <div className="absolute right-0 flex items-center justify-end sm:hidden">
           <img
             src={toggle ? close : menu}
             alt="menu"
@@ -94,9 +103,9 @@ const Navbar = () => {
           <div
             className={`${
               !toggle ? "hidden" : "flex"
-            } black-gradient absolute right-0 top-20 z-10 mx-4 my-2 min-w-[140px] rounded-xl p-6`}
+            } black-gradient absolute right-0 top-12 z-10 my-2 min-w-[140px] rounded-xl p-6`}
           >
-            <ul className="flex flex-1 list-none flex-col items-start justify-end gap-4">
+            <ul className="flex flex-1 list-none flex-col items-center justify-end gap-4 text-center">
               {navLinks.map((nav) => (
                 <li
                   key={nav.id}

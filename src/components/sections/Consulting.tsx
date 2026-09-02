@@ -13,7 +13,7 @@ const consultingOffers = [
 ];
 
 const affiliationSignals = [
-  "Killa Cofounder",
+  "Killa Architect",
   "Anti-Sabotage Proxy",
   "HuzaPilot",
   "SDID",
@@ -29,7 +29,7 @@ const Consulting = () => {
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
-        className="text-secondary mt-4 max-w-4xl text-[17px] leading-[30px]"
+        className="text-secondary mx-auto mt-4 max-w-4xl text-center text-[17px] leading-[30px]"
       >
         {config.sections.consulting.content}
       </motion.p>
@@ -39,7 +39,7 @@ const Consulting = () => {
           variants={fadeIn("right", "spring", 0.15, 0.75)}
           className="green-pink-gradient rounded-2xl p-[1px]"
         >
-          <div className="bg-tertiary h-full rounded-2xl p-6">
+          <div className="bg-tertiary h-full rounded-2xl p-6 text-center">
             <p className="blue-text-gradient text-[13px] font-bold uppercase tracking-[0.25em]">
               Consulting Stack
             </p>
@@ -49,7 +49,7 @@ const Consulting = () => {
                   key={offer}
                   className="border-white/10 bg-black-100 rounded-2xl border p-5"
                 >
-                  <div className="mb-4 h-2 w-2 rounded-full bg-[#00cea8]" />
+                  <div className="mx-auto mb-4 h-2 w-2 rounded-full bg-[#00cea8]" />
                   <p className="text-[16px] font-semibold leading-7 text-white">
                     {offer}
                   </p>
@@ -61,7 +61,7 @@ const Consulting = () => {
 
         <motion.div
           variants={fadeIn("left", "spring", 0.25, 0.75)}
-          className="border-white/10 bg-black-100 rounded-2xl border p-6"
+          className="border-white/10 bg-black-100 rounded-2xl border p-6 text-center"
         >
           <p className="text-[13px] font-bold uppercase tracking-[0.25em] text-[#bf61ff]">
             Consulting
@@ -74,7 +74,7 @@ const Consulting = () => {
             security embedded, deployments automated, and operations visible before
             production pressure arrives.
           </p>
-          <div className="mt-6 flex flex-wrap gap-2">
+          <div className="mt-6 flex flex-wrap justify-center gap-2">
             {affiliationSignals.map((signal) => (
               <span
                 key={signal}
@@ -86,7 +86,7 @@ const Consulting = () => {
           </div>
           <a
             href="#contact"
-            className="mt-8 inline-flex rounded-xl bg-[#915EFF] px-6 py-3 text-[14px] font-bold text-white shadow-lg shadow-[#915EFF]/20 transition-transform hover:-translate-y-1"
+            className="mx-auto mt-8 inline-flex rounded-xl bg-[#915EFF] px-6 py-3 text-[14px] font-bold text-white shadow-lg shadow-[#915EFF]/20 transition-transform hover:-translate-y-1"
           >
             Request a platform audit
           </a>

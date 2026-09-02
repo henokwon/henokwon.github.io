@@ -40,7 +40,7 @@ const ExperienceCard: React.FC<TExperience> = (experience) => {
       }
     >
       <div>
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+        <div className="flex flex-col items-center gap-3 text-center">
           <div>
             <h3 className="text-[24px] font-bold leading-tight text-white">
               {experience.title}
@@ -62,9 +62,9 @@ const ExperienceCard: React.FC<TExperience> = (experience) => {
         {experience.points.map((point, index) => (
           <div
             key={`experience-point-${index}`}
-            className="group grid grid-cols-[34px_1fr] gap-3 rounded-2xl border border-white/10 bg-white/[0.035] p-3 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#00cea8]/30 hover:bg-[#00cea8]/[0.055]"
+            className="group grid gap-3 rounded-2xl border border-white/10 bg-white/[0.035] p-3 text-center transition-all duration-300 hover:-translate-y-0.5 hover:border-[#00cea8]/30 hover:bg-[#00cea8]/[0.055] sm:grid-cols-[34px_1fr] sm:text-left"
           >
-            <span className="flex h-8 w-8 items-center justify-center rounded-xl border border-[#915EFF]/25 bg-[#915EFF]/10 font-mono text-[14px] font-black text-[#9fffea] transition-colors group-hover:border-[#00cea8]/35">
+            <span className="mx-auto flex h-8 w-8 items-center justify-center rounded-xl border border-[#915EFF]/25 bg-[#915EFF]/10 font-mono text-[14px] font-black text-[#9fffea] transition-colors group-hover:border-[#00cea8]/35 sm:mx-0">
               {experienceSignals[index % experienceSignals.length]}
             </span>
             <p className="text-white-100 text-[13px] leading-7">

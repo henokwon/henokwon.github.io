@@ -80,16 +80,16 @@ const Works = () => {
     <>
       <Header useMotion={true} {...config.sections.works} />
 
-      <div className="flex w-full">
+      <div className="flex w-full justify-center">
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
-          className="text-secondary mt-3 max-w-3xl text-[17px] leading-[30px]"
+          className="text-secondary mt-3 max-w-3xl text-center text-[17px] leading-[30px]"
         >
           {config.sections.works.content}
         </motion.p>
       </div>
 
-      <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      <div className="mt-14 grid justify-items-center gap-6 md:grid-cols-2 xl:grid-cols-3">
         {projects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}

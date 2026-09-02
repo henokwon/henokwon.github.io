@@ -41,7 +41,7 @@ const Contact = () => {
         <div className="absolute bottom-8 right-8 h-24 w-24 rounded-full border border-[#915EFF]/20" />
         <div className="relative">
           <Header useMotion={false} {...config.contact} />
-          <p className="text-secondary mt-6 max-w-lg text-[16px] leading-[28px]">
+          <p className="text-secondary mx-auto mt-6 max-w-lg text-center text-[16px] leading-[28px]">
             {config.contact.content}
           </p>
 
@@ -56,7 +56,7 @@ const Contact = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.12, duration: 0.45 }}
                 whileHover={{ y: -4, scale: 1.01 }}
-                className="border-white/10 bg-tertiary/80 group flex items-center gap-5 rounded-2xl border p-5 backdrop-blur"
+                className="border-white/10 bg-tertiary/80 group flex flex-col items-center gap-4 rounded-2xl border p-5 text-center backdrop-blur sm:flex-row sm:text-left"
               >
                 <span
                   className={`bg-gradient-to-br ${channel.accent} flex h-14 w-14 items-center justify-center rounded-2xl text-white shadow-lg shadow-black/30`}
