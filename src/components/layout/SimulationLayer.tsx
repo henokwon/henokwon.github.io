@@ -48,7 +48,7 @@ const SimulationLayer = () => {
       <div className="simulation-grid" aria-hidden="true" />
       <div className="simulation-scanline" aria-hidden="true" />
       <div className="simulation-physics-field" aria-hidden="true">
-        <DecorativeCanvas scene="physics" desktopOnly />
+        <DecorativeCanvas scene="physics" />
       </div>
       <div className="simulation-corner simulation-corner-top" aria-hidden="true">
         HNK://EMPIRICAL.NODE

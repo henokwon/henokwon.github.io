@@ -25,7 +25,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <MotionConfig reducedMotion="user">
+      <MotionConfig reducedMotion="never">
         <div className="bg-primary relative z-0 overflow-x-clip">
           <a href="#main-content" className="skip-link">
             Skip to content

@@ -1,4 +1,4 @@
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 
 import { styles } from "../../constants/styles";
 import DecorativeCanvas from "../layout/DecorativeCanvas";
@@ -11,7 +11,6 @@ const runtimeSignals = [
 ];
 
 const Hero = () => {
-  const reducedMotion = useReducedMotion();
   return (
     <section className="relative mx-auto min-h-screen w-full pb-28 pt-[100px]">
       <div className="hero-runtime-aura" />
@@ -55,7 +54,7 @@ const Hero = () => {
               </div>
 
               <div className="hero-theory-canvas">
-                <DecorativeCanvas scene="theory" desktopOnly />
+                <DecorativeCanvas scene="theory" />
               </div>
 
               <div className="mt-4 grid gap-3 sm:grid-cols-3">
@@ -80,13 +79,7 @@ const Hero = () => {
         <a href="#about" aria-label="Read about Henok">
           <div className="border-secondary flex h-[64px] w-[35px] items-start justify-center rounded-3xl border-4 p-2">
             <motion.div
-              animate={
-                reducedMotion
-                  ? undefined
-                  : {
-                      y: [0, 24, 0],
-                    }
-              }
+              animate={{ y: [0, 24, 0] }}
               transition={{
                 duration: 1.5,
                 repeat: Infinity,

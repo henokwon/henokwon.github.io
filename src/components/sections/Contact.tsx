@@ -1,4 +1,4 @@
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 
 import DecorativeCanvas from "../layout/DecorativeCanvas";
 import { SectionWrapper } from "../../hoc";
@@ -31,7 +31,6 @@ const contactChannels = [
 ];
 
 const Contact = () => {
-  const reducedMotion = useReducedMotion();
   return (
     <div className="flex flex-col-reverse gap-10 overflow-hidden xl:mt-12 xl:flex-row">
       <motion.div
@@ -93,13 +92,13 @@ const Contact = () => {
         <div className="absolute inset-0 rounded-full border border-[#915EFF]/20 blur-[1px]" />
         <motion.div
           aria-hidden="true"
-          animate={reducedMotion ? undefined : { rotate: 360 }}
+          animate={{ rotate: 360 }}
           transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
           className="absolute left-1/2 top-1/2 h-[72%] w-[72%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#00cea8]/30"
         />
         <motion.div
           aria-hidden="true"
-          animate={reducedMotion ? undefined : { rotate: -360 }}
+          animate={{ rotate: -360 }}
           transition={{ duration: 26, repeat: Infinity, ease: "linear" }}
           className="absolute left-1/2 top-1/2 h-[88%] w-[88%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#bf61ff]/20"
         />

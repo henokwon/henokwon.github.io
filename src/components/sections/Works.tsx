@@ -1,5 +1,5 @@
 import Tilt from "react-parallax-tilt";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 
 import { github } from "../../assets";
 import { SectionWrapper } from "../../hoc";
@@ -17,7 +17,6 @@ const ProjectCard: React.FC<{ index: number } & TProject> = ({
   tags,
   sourceCodeLink,
 }) => {
-  const reducedMotion = useReducedMotion();
   return (
     <motion.div
       className="h-full w-full min-w-0"
@@ -25,8 +24,8 @@ const ProjectCard: React.FC<{ index: number } & TProject> = ({
     >
       <Tilt
         className="h-full"
-        glareEnable={!reducedMotion}
-        tiltEnable={!reducedMotion}
+        glareEnable
+        tiltEnable
         tiltMaxAngleX={12}
         tiltMaxAngleY={12}
         glareColor="#aaa6c3"

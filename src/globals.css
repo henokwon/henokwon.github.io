@@ -25,16 +25,6 @@
   transform: translateY(0);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-    animation: none !important;
-    transition: none !important;
-  }
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -570,10 +560,6 @@
 }
 
 @media (max-width: 640px) {
-  .hero-theory-shell {
-    display: none;
-  }
-
   .simulation-physics-field {
     opacity: 0.38;
   }

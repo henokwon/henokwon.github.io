@@ -1,6 +1,6 @@
 import React from "react";
 import Tilt from "react-parallax-tilt";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 
 import { services } from "../../constants";
 import { SectionWrapper } from "../../hoc";
@@ -15,15 +15,8 @@ interface IServiceCard {
 }
 
 const ServiceCard: React.FC<IServiceCard> = ({ index, title, icon }) => {
-  const reducedMotion = useReducedMotion();
   return (
-    <Tilt
-      glareEnable={!reducedMotion}
-      tiltEnable={!reducedMotion}
-      tiltMaxAngleX={30}
-      tiltMaxAngleY={30}
-      glareColor="#aaa6c3"
-    >
+    <Tilt glareEnable tiltEnable tiltMaxAngleX={30} tiltMaxAngleY={30} glareColor="#aaa6c3">
       <div className="xs:w-[250px] w-full">
         <motion.div
           variants={fadeIn("right", "spring", index * 0.5, 0.75)}
