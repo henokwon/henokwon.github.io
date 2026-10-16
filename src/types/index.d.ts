@@ -14,6 +14,10 @@ export type TExperience = {
   iconBg: string;
   date: string;
   points: string[];
+  fellowship?: {
+    title: string;
+    description: string;
+  };
 } & Required<Omit<TCommonProps, "name">>;
 
 export type TTestimonial = {

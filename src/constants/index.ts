@@ -207,17 +207,21 @@ const experiences: TExperience[] = [
     ],
   },
   {
-    title: "Software Engineering Intern",
+    title: "Research Fellow | MSc Fast-Track Programme",
     companyName: "AI and Robotics Center of Excellence at AASTU",
     icon: AASTU,
     iconBg: "#ffffff",
     date: "Jan 2021 - Jun 2022",
     points: [
-      "Contributed to applied software projects involving backend services, data handling, and integration work in a research-focused engineering environment.",
-      "Worked with Python, JavaScript, APIs, and database-backed applications while strengthening software architecture and delivery discipline.",
-      "Supported cross-functional implementation work between engineering, research, and operational stakeholders.",
-      "Documented technical findings and improved maintainability for systems handed across teams.",
+      "Held a research fellowship through the MSc fast-track programme at AASTU’s AI and Robotics Center of Excellence.",
+      "Contributed to research-focused software development, working with Python, JavaScript, APIs, and data-backed applications.",
+      "Collaborated across research and engineering teams, documenting technical findings and supporting implementation work.",
     ],
+    fellowship: {
+      title: "AI4D Fellowship · Completed",
+      description:
+        "Completed an Artificial Intelligence for Development (AI4D) fellowship, including training in Kenya and Addis Ababa, Ethiopia, held one year apart.",
+    },
   },
   {
     title: "DevSecOps & Backend Consultant",

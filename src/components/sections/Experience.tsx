@@ -72,6 +72,16 @@ const ExperienceCard: React.FC<TExperience> = (experience) => {
           </div>
         ))}
       </div>
+      {experience.fellowship && (
+        <div className="mt-4 rounded-xl border border-[#00cea8]/25 bg-[#00cea8]/[0.06] p-4 text-left">
+          <h4 className="text-sm font-semibold leading-relaxed text-[#9fffea]">
+            {experience.fellowship.title}
+          </h4>
+          <p className="experience-point mt-2 text-white-100">
+            {experience.fellowship.description}
+          </p>
+        </div>
+      )}
     </VerticalTimelineElement>
   );
 };
