@@ -98,6 +98,7 @@ const PhysicsEquationsCanvas = () => {
       dpr={[1, 1.5]}
       camera={{ position: [0, 0, 5.8], fov: 44 }}
       gl={{ antialias: true, alpha: true }}
+      fallback={<span />}
     >
       <Suspense fallback={null}>
         <ambientLight intensity={0.8} />

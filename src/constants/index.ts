@@ -250,7 +250,6 @@ const projects: TProject[] = [
         color: "pink-text-gradient",
       },
     ],
-    sourceCodeLink: "https://github.com/henokwon",
   },
   {
     name: "HuzaPilot Developer Platform",
@@ -292,7 +291,6 @@ const projects: TProject[] = [
         color: "pink-text-gradient",
       },
     ],
-    sourceCodeLink: "https://github.com/henokwon",
   },
   {
     name: "ERP Modernization Suite",
@@ -313,7 +311,6 @@ const projects: TProject[] = [
         color: "pink-text-gradient",
       },
     ],
-    sourceCodeLink: "https://github.com/henokwon",
   },
   {
     name: "ChaBo Channel Services",

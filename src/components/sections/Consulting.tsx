@@ -45,14 +45,9 @@ const Consulting = () => {
             </p>
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               {consultingOffers.map((offer) => (
-                <div
-                  key={offer}
-                  className="border-white/10 bg-black-100 rounded-2xl border p-5"
-                >
+                <div key={offer} className="border-white/10 bg-black-100 rounded-2xl border p-5">
                   <div className="mx-auto mb-4 h-2 w-2 rounded-full bg-[#00cea8]" />
-                  <p className="text-[16px] font-semibold leading-7 text-white">
-                    {offer}
-                  </p>
+                  <p className="text-[16px] font-semibold leading-7 text-white">{offer}</p>
                 </div>
               ))}
             </div>
@@ -70,9 +65,9 @@ const Consulting = () => {
             Building and advising on secure platforms.
           </h3>
           <p className="text-secondary mt-4 text-[15px] leading-7">
-            I bring the same delivery posture into consulting: architecture first,
-            security embedded, deployments automated, and operations visible before
-            production pressure arrives.
+            I bring the same delivery posture into consulting: architecture first, security
+            embedded, deployments automated, and operations visible before production pressure
+            arrives.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-2">
             {affiliationSignals.map((signal) => (
@@ -96,4 +91,5 @@ const Consulting = () => {
   );
 };
 
-export default SectionWrapper(Consulting, "consulting");
+const ConsultingSection = SectionWrapper(Consulting, "consulting");
+export default ConsultingSection;

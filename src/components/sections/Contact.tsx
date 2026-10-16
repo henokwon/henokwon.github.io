@@ -1,6 +1,6 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
-import { EarthCanvas } from "../canvas";
+import DecorativeCanvas from "../layout/DecorativeCanvas";
 import { SectionWrapper } from "../../hoc";
 import { slideIn } from "../../utils/motion";
 import { config } from "../../constants/config";
@@ -22,7 +22,7 @@ const contactChannels = [
   {
     name: "Telegram",
     label: "Open Telegram",
-    href: `tg://resolve?phone=${normalizedPhoneNumber}`,
+    href: `https://t.me/+${normalizedPhoneNumber}`,
     accent: "from-[#2AABEE] to-[#229ED9]",
     icon: (
       <path d="m29.6 8.7-4.4 20.8c-.3 1.5-1.2 1.9-2.4 1.2l-6.6-4.9-3.2 3.1c-.4.4-.7.7-1.4.7l.5-6.8L24.4 12c.5-.5-.1-.8-.8-.3L8.3 21.3l-6.6-2.1c-1.4-.4-1.5-1.4.3-2.1L27.8 7.2c1.2-.5 2.2.3 1.8 1.5Z" />
@@ -31,6 +31,7 @@ const contactChannels = [
 ];
 
 const Contact = () => {
+  const reducedMotion = useReducedMotion();
   return (
     <div className="flex flex-col-reverse gap-10 overflow-hidden xl:mt-12 xl:flex-row">
       <motion.div
@@ -61,28 +62,27 @@ const Contact = () => {
                 <span
                   className={`bg-gradient-to-br ${channel.accent} flex h-14 w-14 items-center justify-center rounded-2xl text-white shadow-lg shadow-black/30`}
                 >
-                  <svg
-                    viewBox="0 0 32 32"
-                    className="h-8 w-8 fill-current"
-                    aria-hidden="true"
-                  >
+                  <svg viewBox="0 0 32 32" className="h-8 w-8 fill-current" aria-hidden="true">
                     {channel.icon}
                   </svg>
                 </span>
                 <span className="flex-1">
-                  <span className="block text-[18px] font-bold text-white">
-                    {channel.name}
-                  </span>
-                  <span className="text-secondary mt-1 block text-[14px]">
-                    {channel.label}
-                  </span>
+                  <span className="block text-[18px] font-bold text-white">{channel.name}</span>
+                  <span className="text-secondary mt-1 block text-[14px]">{channel.label}</span>
                 </span>
-                <span className="text-secondary group-hover:text-white">
-                  {phoneNumber}
-                </span>
+                <span className="text-secondary group-hover:text-white">{phoneNumber}</span>
               </motion.a>
             ))}
           </div>
+          <p className="text-secondary mt-6 text-center text-sm">
+            Prefer email?{" "}
+            <a
+              className="text-white underline underline-offset-4"
+              href={`mailto:${config.html.email}`}
+            >
+              {config.html.email}
+            </a>
+          </p>
         </div>
       </motion.div>
 
@@ -93,13 +93,13 @@ const Contact = () => {
         <div className="absolute inset-0 rounded-full border border-[#915EFF]/20 blur-[1px]" />
         <motion.div
           aria-hidden="true"
-          animate={{ rotate: 360 }}
+          animate={reducedMotion ? undefined : { rotate: 360 }}
           transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
           className="absolute left-1/2 top-1/2 h-[72%] w-[72%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#00cea8]/30"
         />
         <motion.div
           aria-hidden="true"
-          animate={{ rotate: -360 }}
+          animate={reducedMotion ? undefined : { rotate: -360 }}
           transition={{ duration: 26, repeat: Infinity, ease: "linear" }}
           className="absolute left-1/2 top-1/2 h-[88%] w-[88%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#bf61ff]/20"
         />
@@ -109,10 +109,11 @@ const Contact = () => {
         <div className="absolute bottom-12 right-8 z-10 rounded-full border border-white/10 bg-black/30 px-4 py-2 text-[12px] font-semibold text-white backdrop-blur">
           Telegram open
         </div>
-        <EarthCanvas />
+        <DecorativeCanvas scene="earth" />
       </motion.div>
     </div>
   );
 };
 
-export default SectionWrapper(Contact, "contact");
+const ContactSection = SectionWrapper(Contact, "contact");
+export default ContactSection;

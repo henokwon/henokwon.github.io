@@ -14,8 +14,7 @@ type TConfig = {
     name: string;
     p: string[];
   };
-  contact: {
-  } & TSection;
+  contact: TSection;
   sections: {
     about: Required<TSection>;
     experience: TSection;

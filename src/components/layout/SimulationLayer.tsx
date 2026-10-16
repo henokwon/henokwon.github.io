@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import { PhysicsEquationsCanvas } from "../canvas";
+import DecorativeCanvas from "./DecorativeCanvas";
 
 const konamiCode = [
   "ArrowUp",
@@ -48,15 +48,12 @@ const SimulationLayer = () => {
       <div className="simulation-grid" aria-hidden="true" />
       <div className="simulation-scanline" aria-hidden="true" />
       <div className="simulation-physics-field" aria-hidden="true">
-        <PhysicsEquationsCanvas />
+        <DecorativeCanvas scene="physics" desktopOnly />
       </div>
       <div className="simulation-corner simulation-corner-top" aria-hidden="true">
         HNK://EMPIRICAL.NODE
       </div>
-      <div
-        className="simulation-corner simulation-corner-bottom"
-        aria-hidden="true"
-      >
+      <div className="simulation-corner simulation-corner-bottom" aria-hidden="true">
         NO EXTRA DIMENSIONS
       </div>
       <div className="simulation-equation" aria-hidden="true">
@@ -76,8 +73,8 @@ const SimulationLayer = () => {
             <div className="simulation-review">
               <b>Einstein review:</b>
               <p>
-                Time is not the river. Randomness is not the refuge. Causality
-                still demands payment. Run the experiment.
+                Time is not the river. Randomness is not the refuge. Causality still demands
+                payment. Run the experiment.
               </p>
             </div>
             <code>Ψframe = Uc(Φglobal) − Ωload + Ξhardware</code>

@@ -51,10 +51,8 @@ your local machine.
 
 **Step 0:**
 
-Note :bangbang: the application uses EmailJS in order to send emails using client-side, therefore,
-you need to create EmailJS account [here](https://emailjs.com/) and sets the
-`VITE_EMAILJS_SERVICE_ID`, `VITE_EMAILJS_TEMPLATE_ID`, and `VITE_EMAIL_JS_ACCESS_TOKEN` environment
-variables in `.env` file.
+Use Node.js 22 and npm. Contact uses direct WhatsApp, Telegram, and email links;
+no API keys, EmailJS account, or environment variables are required.
 
 **Step 1:**
 
@@ -70,7 +68,7 @@ Execute the following command in the root directory of the downloaded repo in or
 dependencies:
 
 ```bash
-npm install
+npm ci
 ```
 
 **Step 3:**
@@ -85,25 +83,23 @@ npm run dev
 
 Open [http://localhost:5173](http://localhost:5173) with your browser to see the result.
 
-**The Site** uses [EmailJS](https://www.emailjs.com/) as external service. You need
-to create an account and get the required credentials to run the app.
-
-Create a `.env` file in the root directory of the project and add the following environment
-variables:
-
-```env
-VITE_EMAILJS_SERVICE_ID=<VITE_EMAILJS_SERVICE_ID>
-VITE_EMAILJS_TEMPLATE_ID=<VITE_EMAILJS_TEMPLATE_ID>
-VITE_EMAIL_JS_ACCESS_TOKEN=<VITE_EMAIL_JS_ACCESS_TOKEN>
-```
+Contact details are configured in `src/constants/config.ts` and
+`src/components/sections/Contact.tsx`.
 
 ## 🚀 Deployment
 
-#### Deploy to production (manual)
+#### Automatic GitHub Pages deployment
 
-You can create an optimized production build with the following command:
+Pushes to `master` run lint and build checks, then publish `dist` to
+[henokwon.github.io](https://henokwon.github.io/) through GitHub Actions.
+Pull requests run checks without publishing. Pages must use **GitHub Actions**
+as its publishing source, and the `github-pages` environment must allow `master`.
+See [DEPLOYMENT.md](DEPLOYMENT.md) for setup and troubleshooting.
+
+Run the same checks locally before pushing:
 
 ```bash
+npm run lint
 npm run build
 ```
 
@@ -140,4 +136,4 @@ To fix a bug or enhance an existing module, follow these steps:
 
 **This Portfolio Website** is open source software
 [licensed as MIT](https://opensource.org/license/mit/) and is free to use — See
-[LICENSE](https://github.com/ladunjexa/reactjs18-3d-portfolio/blob/main/LICENSE) for more details.
+[LICENSE](LICENSE) for more details.

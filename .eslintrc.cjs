@@ -10,12 +10,6 @@ module.exports = {
   ignorePatterns: ["dist", ".eslintrc.cjs"],
   parser: "@typescript-eslint/parser",
   plugins: ["react-refresh"],
-  rules: {
-    "react-refresh/only-export-components": [
-      "warn",
-      { allowConstantExport: true },
-    ],
-  },
   settings: {
     react: {
       // Tells eslint-plugin-react to automatically detect the version of React to use.
@@ -30,6 +24,7 @@ module.exports = {
     },
   },
   rules: {
+    "react-refresh/only-export-components": ["warn", { allowConstantExport: true }],
     // Add your own rules here to override ones from the extended configs.
     "@typescript-eslint/ban-ts-comment": ["off"],
     "@typescript-eslint/no-explicit-any": ["off"],

@@ -2,10 +2,10 @@ import { useState, useRef, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial, Preload } from "@react-three/drei";
 import { random } from "maath";
-import { TypedArray } from "three";
+import type { Points as ThreePoints, TypedArray } from "three";
 
 const Stars = (props: any) => {
-  const ref = useRef<THREE.Points>();
+  const ref = useRef<ThreePoints>(null);
   const [sphere] = useState<TypedArray>(() =>
     random.inSphere(new Float32Array(5001), { radius: 1.2 })
   );
@@ -35,7 +35,7 @@ const Stars = (props: any) => {
 const StarsCanvas = () => {
   return (
     <div className="absolute inset-0 z-[-1] h-auto w-full">
-      <Canvas camera={{ position: [0, 0, 1] }}>
+      <Canvas dpr={[1, 1.5]} camera={{ position: [0, 0, 1] }} fallback={<span />}>
         <Suspense fallback={null}>
           <Stars />
         </Suspense>

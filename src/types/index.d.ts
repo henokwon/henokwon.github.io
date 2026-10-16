@@ -25,7 +25,7 @@ export type TProject = {
     name: string;
     color: string;
   }[];
-  sourceCodeLink: string;
+  sourceCodeLink?: string;
 } & Required<Pick<TCommonProps, "name">>;
 
 export type TTechnology = Required<Omit<TCommonProps, "title">>;

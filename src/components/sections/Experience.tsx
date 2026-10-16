@@ -1,9 +1,6 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
+import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
 
 import "react-vertical-timeline-component/style.min.css";
 
@@ -19,8 +16,7 @@ const ExperienceCard: React.FC<TExperience> = (experience) => {
   return (
     <VerticalTimelineElement
       contentStyle={{
-        background:
-          "linear-gradient(135deg, rgba(21,16,48,0.96), rgba(5,8,22,0.94))",
+        background: "linear-gradient(135deg, rgba(21,16,48,0.96), rgba(5,8,22,0.94))",
         color: "#fff",
         border: "1px solid rgba(145,94,255,0.22)",
         borderRadius: "24px",
@@ -42,13 +38,8 @@ const ExperienceCard: React.FC<TExperience> = (experience) => {
       <div>
         <div className="flex flex-col items-center gap-3 text-center">
           <div>
-            <h3 className="text-[24px] font-bold leading-tight text-white">
-              {experience.title}
-            </h3>
-            <p
-              className="text-secondary mt-1 text-[16px] font-semibold"
-              style={{ margin: 0 }}
-            >
+            <h3 className="text-[24px] font-bold leading-tight text-white">{experience.title}</h3>
+            <p className="text-secondary mt-1 text-[16px] font-semibold" style={{ margin: 0 }}>
               {experience.companyName}
             </p>
           </div>
@@ -67,9 +58,7 @@ const ExperienceCard: React.FC<TExperience> = (experience) => {
             <span className="mx-auto flex h-8 w-8 items-center justify-center rounded-xl border border-[#915EFF]/25 bg-[#915EFF]/10 font-mono text-[14px] font-black text-[#9fffea] transition-colors group-hover:border-[#00cea8]/35 sm:mx-0">
               {experienceSignals[index % experienceSignals.length]}
             </span>
-            <p className="text-white-100 text-[13px] leading-7">
-              {point}
-            </p>
+            <p className="text-white-100 text-[13px] leading-7">{point}</p>
           </div>
         ))}
       </div>
@@ -112,4 +101,5 @@ const Experience = () => {
   );
 };
 
-export default SectionWrapper(Experience, "work");
+const ExperienceSection = SectionWrapper(Experience, "work");
+export default ExperienceSection;

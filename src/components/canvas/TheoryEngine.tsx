@@ -15,12 +15,9 @@ const RuntimeCore = () => {
     () =>
       Array.from({ length: 9 }, (_, index) => {
         const offset = (index - 4) * 0.36;
-        return [
-          new THREE.Vector3(-1.7, offset, -0.55),
-          new THREE.Vector3(1.7, offset, -0.55),
-        ];
+        return [new THREE.Vector3(-1.7, offset, -0.55), new THREE.Vector3(1.7, offset, -0.55)];
       }),
-    [],
+    []
   );
 
   useFrame(({ clock }) => {
@@ -99,7 +96,11 @@ const OrbitingAxioms = () => {
         return (
           <Float key={label} speed={1.8} rotationIntensity={0.16} floatIntensity={0.25}>
             <Text
-              position={[Math.cos(angle) * radius, Math.sin(angle * 1.7) * 0.42, Math.sin(angle) * radius]}
+              position={[
+                Math.cos(angle) * radius,
+                Math.sin(angle * 1.7) * 0.42,
+                Math.sin(angle) * radius,
+              ]}
               fontSize={0.16}
               anchorX="center"
               anchorY="middle"
@@ -150,9 +151,10 @@ const TheoryEngineCanvas = () => {
   return (
     <Canvas
       frameloop="always"
-      dpr={[1, 2]}
+      dpr={[1, 1.5]}
       camera={{ position: [0, 0.15, 5.3], fov: 42 }}
-      gl={{ antialias: true, alpha: true, preserveDrawingBuffer: true }}
+      gl={{ antialias: true, alpha: true }}
+      fallback={<span />}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.45} />

@@ -1,7 +1,7 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 import { styles } from "../../constants/styles";
-import { TheoryEngineCanvas } from "../canvas";
+import DecorativeCanvas from "../layout/DecorativeCanvas";
 import { config } from "../../constants/config";
 
 const runtimeSignals = [
@@ -11,20 +11,35 @@ const runtimeSignals = [
 ];
 
 const Hero = () => {
+  const reducedMotion = useReducedMotion();
   return (
-    <section className="relative mx-auto h-screen w-full overflow-hidden">
+    <section className="relative mx-auto min-h-screen w-full pb-28 pt-[100px]">
       <div className="hero-runtime-aura" />
-      <div
-        className={`absolute inset-x-0 top-[86px] z-10 mx-auto max-w-7xl ${styles.paddingX}`}
-      >
+      <div className={`relative z-10 mx-auto max-w-7xl ${styles.paddingX}`}>
         <div className="flex w-full flex-col items-center text-center">
           <div className="max-w-4xl">
             <h1 className={`${styles.heroHeadText} text-white`}>
               Hi, I'm <span className="text-[#915EFF]">{config.hero.name}</span>
             </h1>
-            <p className={`${styles.heroSubText} text-white-100 mt-2`}>
-              {config.hero.p[0]}
+            <p className={`${styles.heroSubText} text-white-100 mt-2`}>{config.hero.p[0]}</p>
+            <p className="text-secondary mx-auto mt-4 max-w-xl text-base leading-7">
+              I build secure backend platforms, automate cloud delivery, and make production systems
+              reliable and observable.
             </p>
+            <div className="mt-6 flex flex-wrap justify-center gap-4">
+              <a
+                href="#projects"
+                className="rounded-xl bg-[#915EFF] px-6 py-3 font-semibold text-white"
+              >
+                Explore projects
+              </a>
+              <a
+                href="#contact"
+                className="rounded-xl border border-white/30 px-6 py-3 font-semibold text-white"
+              >
+                Get in touch
+              </a>
+            </div>
           </div>
 
           <motion.div
@@ -40,7 +55,7 @@ const Hero = () => {
               </div>
 
               <div className="hero-theory-canvas">
-                <TheoryEngineCanvas />
+                <DecorativeCanvas scene="theory" desktopOnly />
               </div>
 
               <div className="mt-4 grid gap-3 sm:grid-cols-3">
@@ -56,19 +71,22 @@ const Hero = () => {
               </div>
 
               <div className="hero-test-ribbon">Δs² = (ÛcΔt)² − ΣΔxᵢ² − Ωcache</div>
-
             </div>
           </motion.div>
         </div>
       </div>
 
-      <div className="xs:bottom-10 absolute bottom-32 flex w-full items-center justify-center">
-        <a href="#about">
+      <div className="absolute bottom-6 flex w-full items-center justify-center">
+        <a href="#about" aria-label="Read about Henok">
           <div className="border-secondary flex h-[64px] w-[35px] items-start justify-center rounded-3xl border-4 p-2">
             <motion.div
-              animate={{
-                y: [0, 24, 0],
-              }}
+              animate={
+                reducedMotion
+                  ? undefined
+                  : {
+                      y: [0, 24, 0],
+                    }
+              }
               transition={{
                 duration: 1.5,
                 repeat: Infinity,
