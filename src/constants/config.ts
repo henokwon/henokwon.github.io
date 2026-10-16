@@ -52,7 +52,7 @@ export const config: TConfig = {
       reliable systems that are observable, compliant, recoverable, and production-ready.`,
     },
     experience: {
-      p: "Systems I have delivered and secured",
+      p: "Professional journey",
       h2: "Experience.",
     },
     feedbacks: {

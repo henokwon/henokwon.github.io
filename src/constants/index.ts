@@ -159,11 +159,9 @@ const experiences: TExperience[] = [
     iconBg: "#ffffff",
     date: "Nov 2025 - Present",
     points: [
-      "Worked on architecture and backend development for SDID, a national digital identity platform covering enrollment and pre-enrollment workflows.",
-      "Built NestJS/Nx services across auth, admin, account, notification, analytics, media, sync, and enrollment domains.",
-      "Implemented Kafka-driven synchronization, API gateway integrations, Redis caching, Cassandra data models, and offline encrypted storage with SQLCipher.",
-      "Applied DevSecOps practices across JWT/RBAC, API keys, TLS/mTLS, dependency scanning, container scanning, observability, and automated quality gates.",
-      "Built HuzaPilot, a polyglot microservices generator supporting NestJS, FastAPI, Spring Boot, Go/Gin, Docker Compose, OpenAPI, Prometheus, Grafana, and Loki.",
+      "Built SDID identity services with NestJS/Nx, Kafka, Redis, and Cassandra.",
+      "Secured delivery with RBAC, mTLS, container scanning, and automated checks.",
+      "Built HuzaPilot for polyglot microservices, Docker, and integrated observability.",
     ],
   },
   {
@@ -173,11 +171,9 @@ const experiences: TExperience[] = [
     iconBg: "#ffffff",
     date: "May 2025 - Nov 2025",
     points: [
-      "Led ERP customization initiatives across manufacturing, retail, and service sectors with specialized modules, integrations, and optimized workflows.",
-      "Engineered Python and PostgreSQL-based ERP modules for tax computation, bank reconciliation, quality management, inventory control, and reporting.",
-      "Built integrations with payment gateways and banking APIs including Chapa, CBE Birr, Stripe, and external financial systems.",
-      "Developed middleware for WooCommerce, Magento, custom e-commerce platforms, XML-RPC connectors, REST APIs, and legacy system modernization.",
-      "Optimized PostgreSQL schemas with indexing, partitioning, and materialized views for high-volume transaction processing.",
+      "Built Python/PostgreSQL ERP modules for tax, inventory, and reconciliation.",
+      "Integrated Chapa, CBE Birr, Stripe, and e-commerce platforms through APIs.",
+      "Optimized transaction workloads with indexing, partitioning, and materialized views.",
     ],
   },
   {
@@ -187,10 +183,9 @@ const experiences: TExperience[] = [
     iconBg: "#0b1228",
     date: "Jul 2024 - Jul 2025",
     points: [
-      "Worked across cloud infrastructure, Linux systems, virtualization, storage, networking, and enterprise platform operations.",
-      "Supported infrastructure planning for resilient services, disaster recovery, business continuity, and secure system administration.",
-      "Applied monitoring, logging, troubleshooting, and incident-analysis practices to improve infrastructure visibility.",
-      "Strengthened hands-on exposure to VMware, Proxmox, server architecture, data center networking, SAN/NAS storage, and cloud operations.",
+      "Worked with Linux, VMware, and Proxmox across enterprise cloud infrastructure.",
+      "Supported resilient networks, SAN/NAS storage, and disaster recovery planning.",
+      "Improved operational visibility through monitoring, logging, and incident analysis.",
     ],
   },
   {
@@ -200,10 +195,9 @@ const experiences: TExperience[] = [
     iconBg: "#ffffff",
     date: "Nov 2022 - Present",
     points: [
-      "Led backend and platform delivery for business systems, API gateways, ERP customization, payment integrations, and legacy system modernization.",
-      "Improved release quality through CI/CD workflows, containerized environments, automated checks, and clearer engineering standards.",
-      "Designed database-backed services with attention to modeling, indexing, backup strategy, data integration, and operational reliability.",
-      "Strengthened security posture across access control, system hardening, compliance-aware workflows, and production observability.",
+      "Automated releases with CI/CD pipelines, containers, and quality checks.",
+      "Hardened production systems with access controls and integrated observability.",
+      "Supported API platforms and database reliability through indexing and backups.",
     ],
   },
   {
@@ -213,14 +207,14 @@ const experiences: TExperience[] = [
     iconBg: "#ffffff",
     date: "Jan 2021 - Jun 2022",
     points: [
-      "Held a research fellowship through the MSc fast-track programme at AASTU’s AI and Robotics Center of Excellence.",
-      "Contributed to research-focused software development, working with Python, JavaScript, APIs, and data-backed applications.",
-      "Collaborated across research and engineering teams, documenting technical findings and supporting implementation work.",
+      "Pursued research through the MSc fast-track programme in AI and robotics.",
+      "Developed research software with Python, JavaScript, APIs, and data-backed apps.",
+      "Collaborated with researchers and engineers to document and implement findings.",
     ],
     fellowship: {
       title: "AI4D Fellowship · Completed",
       description:
-        "Completed an Artificial Intelligence for Development (AI4D) fellowship, including training in Kenya and Addis Ababa, Ethiopia, held one year apart.",
+        "Artificial Intelligence for Development training in Kenya and Addis Ababa, Ethiopia, one year apart.",
     },
   },
   {
@@ -230,11 +224,9 @@ const experiences: TExperience[] = [
     iconBg: "#0b1228",
     date: "Mar 2019 - Present",
     points: [
-      "Provided freelance software development services for HorizonTech ICT Solutions.",
-      "Designed and delivered full-stack web platforms with frontend interfaces, secure API integrations, authentication flows, and production deployment practices.",
-      "Built automation around deployment, environment configuration, monitoring, and release handoffs to reduce manual operational work.",
-      "Modernized legacy workflows with pragmatic architecture choices across Node.js, Django, React, databases, and Linux-based hosting environments.",
-      "Advised teams on reliability basics that matter in production: backups, logging, access control, incident response, and maintainable infrastructure.",
+      "Delivered full-stack software for clients including HorizonTech ICT Solutions.",
+      "Built React interfaces and Node.js/Django services with secure API integrations.",
+      "Automated Linux deployments, monitoring, and backups for reliable operations.",
     ],
   },
 ];

@@ -59,7 +59,7 @@ const ExperienceCard: React.FC<TExperience> = (experience) => {
         </div>
       </div>
 
-      <div className="mt-4 grid gap-2">
+      <div className="mt-4 grid auto-rows-fr gap-2">
         {experience.points.map((point, index) => (
           <div
             key={`experience-point-${index}`}
