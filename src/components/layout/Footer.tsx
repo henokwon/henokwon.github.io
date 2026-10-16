@@ -13,7 +13,7 @@ export default function Footer() {
             Senior Software Engineer
           </p>
           <p className="text-secondary mt-2 text-xs">
-            © {new Date().getFullYear()} Henok. Built with care, delivered with purpose.
+            © {new Date().getFullYear()} Henok.
           </p>
         </div>
         <nav
