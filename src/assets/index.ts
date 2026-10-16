@@ -10,6 +10,12 @@ import IE from "./IE.png";
 import Horizon from "./Horizon.png";
 import Freelancer from "./Freelancer.png";
 import AASTU from "./AASTU.png";
+// Official brand assets, saved locally for reliable rendering.
+// HuzaLabs: github.com/Huzalabs; Zergaw: zergaw.com; ETPlus: et.plus.
+import huzaLabs from "./company/huzalabs.png";
+import zergaw from "./company/zergaw.png";
+import etplus from "./company/etplus.png";
+import freelance from "./company/freelance.svg";
 
 import css from "./tech/css.png";
 import docker from "./tech/docker.svg";
@@ -89,4 +95,8 @@ export {
   Horizon,
   Freelancer,
   AASTU,
+  huzaLabs,
+  zergaw,
+  etplus,
+  freelance,
 };

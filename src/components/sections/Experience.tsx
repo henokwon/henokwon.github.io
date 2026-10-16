@@ -30,7 +30,7 @@ const ExperienceCard: React.FC<TExperience> = (experience) => {
           <img
             src={experience.icon}
             alt={experience.companyName}
-            className="h-[60%] w-[60%] object-contain"
+            className="h-[80%] w-[80%] object-contain"
           />
         </div>
       }
@@ -45,9 +45,17 @@ const ExperienceCard: React.FC<TExperience> = (experience) => {
               {experience.companyName}
             </p>
           </div>
-          <span className="w-fit rounded-full border border-[#00cea8]/25 bg-[#00cea8]/10 px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-[#9fffea]">
-            field log
-          </span>
+          <div
+            className="company-logo-badge flex h-12 w-28 items-center justify-center rounded-xl border border-white/10 px-2 py-1.5"
+            style={{ background: experience.iconBg }}
+          >
+            <img
+              src={experience.icon}
+              alt=""
+              className="h-full w-full object-contain"
+              loading="lazy"
+            />
+          </div>
         </div>
       </div>
 

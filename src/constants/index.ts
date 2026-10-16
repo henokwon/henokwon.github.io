@@ -30,6 +30,12 @@ import {
   githubActions,
   prometheus,
   grafana,
+  huzaLabs,
+  zergaw,
+  etplus,
+  freelance,
+  IE,
+  AASTU,
 } from "../assets";
 
 export const navLinks: TNavLink[] = [
@@ -149,8 +155,8 @@ const experiences: TExperience[] = [
   {
     title: "Senior Software Engineer | Tech Lead",
     companyName: "HuzaLabs",
-    icon: creator,
-    iconBg: "#383E56",
+    icon: huzaLabs,
+    iconBg: "#ffffff",
     date: "Nov 2025 - Present",
     points: [
       "Worked on architecture and backend development for SDID, a national digital identity platform covering enrollment and pre-enrollment workflows.",
@@ -163,8 +169,8 @@ const experiences: TExperience[] = [
   {
     title: "ERP Software Developer",
     companyName: "Zergaw Cloud",
-    icon: backend,
-    iconBg: "#E6DEDD",
+    icon: zergaw,
+    iconBg: "#ffffff",
     date: "May 2025 - Nov 2025",
     points: [
       "Led ERP customization initiatives across manufacturing, retail, and service sectors with specialized modules, integrations, and optimized workflows.",
@@ -177,8 +183,8 @@ const experiences: TExperience[] = [
   {
     title: "System & Cloud Engineer",
     companyName: "IE Networks",
-    icon: mobile,
-    iconBg: "#383E56",
+    icon: IE,
+    iconBg: "#0b1228",
     date: "Jul 2024 - Jul 2025",
     points: [
       "Worked across cloud infrastructure, Linux systems, virtualization, storage, networking, and enterprise platform operations.",
@@ -189,10 +195,10 @@ const experiences: TExperience[] = [
   },
   {
     title: "Senior Software Engineer | Tech Lead",
-    companyName: "Horizon Tech ICT Solutions",
-    icon: backend,
-    iconBg: "#E6DEDD",
-    date: "Nov 2022 - Jun 2024",
+    companyName: "ETPlus",
+    icon: etplus,
+    iconBg: "#ffffff",
+    date: "Nov 2022 - Present",
     points: [
       "Led backend and platform delivery for business systems, API gateways, ERP customization, payment integrations, and legacy system modernization.",
       "Improved release quality through CI/CD workflows, containerized environments, automated checks, and clearer engineering standards.",
@@ -203,8 +209,8 @@ const experiences: TExperience[] = [
   {
     title: "Software Engineering Intern",
     companyName: "AI and Robotics Center of Excellence at AASTU",
-    icon: web,
-    iconBg: "#383E56",
+    icon: AASTU,
+    iconBg: "#ffffff",
     date: "Jan 2021 - Jun 2022",
     points: [
       "Contributed to applied software projects involving backend services, data handling, and integration work in a research-focused engineering environment.",
@@ -216,8 +222,8 @@ const experiences: TExperience[] = [
   {
     title: "DevSecOps & Backend Consultant",
     companyName: "Freelance",
-    icon: creator,
-    iconBg: "#E6DEDD",
+    icon: freelance,
+    iconBg: "#0b1228",
     date: "Mar 2019 - Present",
     points: [
       "Designed and delivered backend-heavy web platforms with secure API integrations, authentication flows, and production deployment practices.",
