@@ -21,7 +21,7 @@ class CanvasBoundary extends Component<{ children: ReactNode }, { failed: boolea
   }
 }
 
-// Decorations load only when visible and yield to accessibility/device preferences.
+// Keep models visible for reduced motion; pause animation instead of hiding scenes.
 export default function DecorativeCanvas({
   scene,
   desktopOnly = false,
@@ -31,12 +31,17 @@ export default function DecorativeCanvas({
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const inView = useInView(containerRef, { margin: "100px" });
+  const hasBeenInView = useInView(containerRef, { margin: "100px", once: true });
   const reducedMotion = useReducedMotion();
-  const [enabled, setEnabled] = useState(false);
+  const [environment, setEnvironment] = useState({ visible: true, allowed: !desktopOnly });
 
   useEffect(() => {
     const desktop = window.matchMedia("(min-width: 641px)");
-    const update = () => setEnabled(!document.hidden && (!desktopOnly || desktop.matches));
+    const update = () =>
+      setEnvironment({
+        visible: !document.hidden,
+        allowed: !desktopOnly || desktop.matches,
+      });
     update();
     desktop.addEventListener("change", update);
     document.addEventListener("visibilitychange", update);
@@ -48,11 +53,11 @@ export default function DecorativeCanvas({
 
   const Scene = scenes[scene];
   return (
-    <div ref={containerRef} className="h-full w-full" aria-hidden="true">
-      {enabled && inView && reducedMotion === false && (
+    <div ref={containerRef} className="absolute inset-0" aria-hidden="true">
+      {environment.allowed && hasBeenInView && (
         <CanvasBoundary>
           <Suspense fallback={null}>
-            <Scene />
+            <Scene active={environment.visible && inView} animated={!reducedMotion} />
           </Suspense>
         </CanvasBoundary>
       )}

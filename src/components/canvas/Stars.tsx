@@ -2,15 +2,19 @@ import { useState, useRef, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial, Preload } from "@react-three/drei";
 import { random } from "maath";
-import type { Points as ThreePoints, TypedArray } from "three";
+import type { Points as ThreePoints } from "three";
+import type { TCanvasSceneProps } from "../../types";
 
-const Stars = (props: any) => {
+const Stars = ({ animated = true }: TCanvasSceneProps) => {
   const ref = useRef<ThreePoints>(null);
-  const [sphere] = useState<TypedArray>(() =>
-    random.inSphere(new Float32Array(5001), { radius: 1.2 })
-  );
+  const [sphere] = useState(() => {
+    const positions = new Float32Array(5001);
+    random.inSphere(positions, { radius: 1.2 });
+    return positions;
+  });
 
   useFrame((_state, delta) => {
+    if (!animated) return;
     if (ref.current) {
       ref.current.rotation.x -= delta / 10;
       ref.current.rotation.y -= delta / 15;
@@ -19,7 +23,7 @@ const Stars = (props: any) => {
 
   return (
     <group rotation={[0, 0, Math.PI / 4]}>
-      <Points ref={ref} positions={sphere} stride={3} frustumCulled {...props}>
+      <Points ref={ref} positions={sphere} stride={3} frustumCulled>
         <PointMaterial
           transparent
           color="#f272c8"
@@ -32,12 +36,17 @@ const Stars = (props: any) => {
   );
 };
 
-const StarsCanvas = () => {
+const StarsCanvas = ({ active = true, animated = true }: TCanvasSceneProps) => {
   return (
     <div className="absolute inset-0 z-[-1] h-auto w-full">
-      <Canvas dpr={[1, 1.5]} camera={{ position: [0, 0, 1] }} fallback={<span />}>
+      <Canvas
+        frameloop={!active ? "never" : animated ? "always" : "demand"}
+        dpr={[1, 1.5]}
+        camera={{ position: [0, 0, 1] }}
+        fallback={<span />}
+      >
         <Suspense fallback={null}>
-          <Stars />
+          <Stars animated={animated} />
         </Suspense>
 
         <Preload all />

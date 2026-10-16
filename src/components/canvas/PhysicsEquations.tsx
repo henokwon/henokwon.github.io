@@ -1,7 +1,9 @@
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Float, Text } from "@react-three/drei";
+import { Float } from "@react-three/drei";
+import Text from "./SceneText";
 import { Suspense, useRef } from "react";
 import * as THREE from "three";
+import type { TCanvasSceneProps } from "../../types";
 
 const equations = [
   {
@@ -42,10 +44,11 @@ const equations = [
   },
 ];
 
-const EquationCloud = () => {
+const EquationCloud = ({ animated = true }: TCanvasSceneProps) => {
   const groupRef = useRef<THREE.Group>(null);
 
   useFrame(({ clock }) => {
+    if (!animated) return;
     if (groupRef.current) {
       const elapsed = clock.getElapsedTime();
       groupRef.current.rotation.y = Math.sin(elapsed * 0.08) * 0.12;
@@ -58,7 +61,7 @@ const EquationCloud = () => {
       {equations.map((equation, index) => (
         <Float
           key={equation.text}
-          speed={0.8 + index * 0.08}
+          speed={animated ? 0.8 + index * 0.08 : 0}
           rotationIntensity={0.05}
           floatIntensity={0.42}
         >
@@ -91,10 +94,10 @@ const EquationCloud = () => {
   );
 };
 
-const PhysicsEquationsCanvas = () => {
+const PhysicsEquationsCanvas = ({ active = true, animated = true }: TCanvasSceneProps) => {
   return (
     <Canvas
-      frameloop="always"
+      frameloop={!active ? "never" : animated ? "always" : "demand"}
       dpr={[1, 1.5]}
       camera={{ position: [0, 0, 5.8], fov: 44 }}
       gl={{ antialias: true, alpha: true }}
@@ -102,7 +105,7 @@ const PhysicsEquationsCanvas = () => {
     >
       <Suspense fallback={null}>
         <ambientLight intensity={0.8} />
-        <EquationCloud />
+        <EquationCloud animated={animated} />
       </Suspense>
     </Canvas>
   );

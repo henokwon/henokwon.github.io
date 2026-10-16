@@ -4,6 +4,11 @@ export type TCommonProps = {
   icon?: string;
 };
 
+export type TCanvasSceneProps = {
+  active?: boolean;
+  animated?: boolean;
+};
+
 export type TExperience = {
   companyName: string;
   iconBg: string;

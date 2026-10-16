@@ -1,13 +1,15 @@
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Float, Line, OrbitControls, Text } from "@react-three/drei";
+import { Float, Line, OrbitControls } from "@react-three/drei";
+import Text from "./SceneText";
 import { Suspense, useMemo, useRef } from "react";
 import * as THREE from "three";
 
 import CanvasLoader from "../layout/Loader";
+import type { TCanvasSceneProps } from "../../types";
 
 const orbitLabels = ["Ûc", "Ωcache", "P≠NP", "Δs²", "c=clock"];
 
-const RuntimeCore = () => {
+const RuntimeCore = ({ animated = true }: TCanvasSceneProps) => {
   const coreRef = useRef<THREE.Group>(null);
   const ringRef = useRef<THREE.Mesh>(null);
 
@@ -21,6 +23,7 @@ const RuntimeCore = () => {
   );
 
   useFrame(({ clock }) => {
+    if (!animated) return;
     const elapsed = clock.getElapsedTime();
 
     if (coreRef.current) {
@@ -78,10 +81,11 @@ const RuntimeCore = () => {
   );
 };
 
-const OrbitingAxioms = () => {
+const OrbitingAxioms = ({ animated = true }: TCanvasSceneProps) => {
   const groupRef = useRef<THREE.Group>(null);
 
   useFrame(({ clock }) => {
+    if (!animated) return;
     if (groupRef.current) {
       groupRef.current.rotation.y = clock.getElapsedTime() * 0.18;
     }
@@ -94,7 +98,12 @@ const OrbitingAxioms = () => {
         const radius = 2.15;
 
         return (
-          <Float key={label} speed={1.8} rotationIntensity={0.16} floatIntensity={0.25}>
+          <Float
+            key={label}
+            speed={animated ? 1.8 : 0}
+            rotationIntensity={0.16}
+            floatIntensity={0.25}
+          >
             <Text
               position={[
                 Math.cos(angle) * radius,
@@ -115,50 +124,57 @@ const OrbitingAxioms = () => {
   );
 };
 
-const TheoryScene = () => {
+const TheoryScene = ({ animated = true }: TCanvasSceneProps) => {
   return (
     <>
       <ambientLight intensity={0.45} />
       <pointLight position={[4, 3, 4]} intensity={3.2} color="#915EFF" />
       <pointLight position={[-4, -2, 2]} intensity={2.1} color="#00cea8" />
-      <RuntimeCore />
-      <Float speed={1.35} rotationIntensity={0.08} floatIntensity={0.18}>
-        <Text
-          position={[0, 0.08, 1.16]}
-          fontSize={0.34}
-          anchorX="center"
-          anchorY="middle"
-          color="#9fffea"
-        >
-          Δs²
-        </Text>
-        <Text
-          position={[0, -0.24, 1.16]}
-          fontSize={0.11}
-          anchorX="center"
-          anchorY="middle"
-          color="#bf61ff"
-        >
-          Ûc · Ωcache
-        </Text>
-      </Float>
-      <OrbitingAxioms />
+      <RuntimeCore animated={animated} />
+      <Suspense fallback={null}>
+        <Float speed={animated ? 1.35 : 0} rotationIntensity={0.08} floatIntensity={0.18}>
+          <Text
+            position={[0, 0.08, 1.16]}
+            fontSize={0.34}
+            anchorX="center"
+            anchorY="middle"
+            color="#9fffea"
+          >
+            Δs²
+          </Text>
+          <Text
+            position={[0, -0.24, 1.16]}
+            fontSize={0.11}
+            anchorX="center"
+            anchorY="middle"
+            color="#bf61ff"
+          >
+            Ûc · Ωcache
+          </Text>
+        </Float>
+        <OrbitingAxioms animated={animated} />
+      </Suspense>
     </>
   );
 };
 
-const TheoryEngineCanvas = () => {
+const TheoryEngineCanvas = ({ active = true, animated = true }: TCanvasSceneProps) => {
   return (
     <Canvas
-      frameloop="always"
+      frameloop={!active ? "never" : animated ? "always" : "demand"}
       dpr={[1, 1.5]}
       camera={{ position: [0, 0.15, 5.3], fov: 42 }}
       gl={{ antialias: true, alpha: true }}
       fallback={<span />}
     >
       <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.45} />
-        <TheoryScene />
+        <OrbitControls
+          enableZoom={false}
+          enablePan={false}
+          autoRotate={animated && active}
+          autoRotateSpeed={0.45}
+        />
+        <TheoryScene animated={animated} />
       </Suspense>
     </Canvas>
   );
