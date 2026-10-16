@@ -9,6 +9,104 @@
   outline-offset: 5px;
 }
 
+.portfolio-nav {
+  position: fixed;
+  z-index: 70;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 24px);
+  max-width: 1248px;
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  background: rgba(8, 10, 27, 0.78);
+  backdrop-filter: blur(20px);
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+.portfolio-nav.is-scrolled {
+  background: rgba(8, 10, 27, 0.94);
+  border-color: rgba(145, 94, 255, 0.24);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+.portfolio-nav .nav-avatar-node {
+  width: 40px;
+  height: 40px;
+}
+.nav-link {
+  display: block;
+  padding: 10px 16px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: white;
+  background: rgba(255, 255, 255, 0.055);
+}
+.nav-link[aria-current="location"] {
+  color: #9fffea;
+  background: rgba(0, 206, 168, 0.08);
+  border-color: rgba(0, 206, 168, 0.2);
+}
+.nav-mobile-panel {
+  border: 1px solid rgba(145, 94, 255, 0.25);
+  background: rgba(8, 10, 27, 0.98);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.45);
+}
+.nav-reading-progress {
+  pointer-events: none;
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 0;
+  height: 2px;
+  border-radius: 2px;
+  transform-origin: left;
+  background: linear-gradient(90deg, #915eff, #00cea8, #bf61ff);
+}
+.portfolio-footer {
+  position: relative;
+  z-index: 10;
+  border-top: 1px solid rgba(145, 94, 255, 0.2);
+  background: rgba(5, 8, 22, 0.97);
+}
+.portfolio-footer a {
+  transition: color 0.2s ease;
+}
+.portfolio-footer a:hover {
+  color: #9fffea;
+}
+.footer-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+}
+.footer-top span {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(0, 206, 168, 0.22);
+  border-radius: 9px;
+  color: #9fffea;
+  transition: transform 0.2s ease;
+}
+.footer-top:hover span {
+  transform: translateY(-3px);
+}
+
 .skip-link {
   position: fixed;
   left: 16px;
@@ -772,6 +870,7 @@
 }
 
 .simulation-corner-bottom {
+  z-index: 5;
   bottom: 18px;
   left: 18px;
 }

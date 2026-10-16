@@ -12,7 +12,7 @@ const runtimeSignals = [
 
 const Hero = () => {
   return (
-    <section className="hero-section relative mx-auto w-full">
+    <section id="top" className="hero-section relative mx-auto w-full">
       <div className="hero-runtime-aura" />
       <div className={`relative z-10 mx-auto w-full max-w-7xl ${styles.paddingX}`}>
         <div className="grid w-full items-center gap-7 text-center lg:grid-cols-2 lg:gap-10 lg:text-left">
@@ -22,7 +22,7 @@ const Hero = () => {
             </h1>
             <p className={`${styles.heroSubText} text-white-100 mt-2`}>{config.hero.p[0]}</p>
             <p className="text-secondary mx-auto mt-4 max-w-xl text-[15px] leading-7 lg:mx-0 lg:text-base">
-              I build secure backend platforms, automate cloud delivery, and make production systems
+              I build secured platforms, automate cloud delivery, and make production systems
               reliable and observable.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3 lg:justify-start">

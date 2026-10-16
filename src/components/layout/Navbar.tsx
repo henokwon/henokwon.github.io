@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, useScroll } from "framer-motion";
 
-import { styles } from "../../constants/styles";
 import { navLinks } from "../../constants";
 import { menu, close } from "../../assets";
 
@@ -48,16 +47,14 @@ const Navbar = () => {
 
     const navbarHighlighter = () => {
       const sections = document.querySelectorAll<HTMLElement>("section[id]");
-
+      let sectionId = "";
       sections.forEach((current) => {
-        const sectionId = current.getAttribute("id");
-        const sectionHeight = current.offsetHeight;
-        const sectionTop = current.getBoundingClientRect().top - sectionHeight * 0.2;
-
-        if (sectionTop < 0 && sectionTop + sectionHeight > 0) {
-          setActive(sectionId);
-        }
+        if (current.getBoundingClientRect().top <= 140) sectionId = current.id;
       });
+      if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 4) {
+        sectionId = "contact";
+      }
+      setActive(sectionId === "tech" || sectionId === "projects" ? "work" : sectionId);
     };
 
     window.addEventListener("scroll", navbarHighlighter);
@@ -69,15 +66,10 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav
-      aria-label="Main navigation"
-      className={`${styles.paddingX} fixed top-0 z-20 flex w-full items-center py-5 ${
-        scrolled ? "bg-primary" : "bg-transparent"
-      }`}
-    >
+    <nav aria-label="Main navigation" className={`portfolio-nav ${scrolled ? "is-scrolled" : ""}`}>
       <motion.div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 h-[2px] origin-left bg-gradient-to-r from-[#915EFF] via-[#00cea8] to-[#bf61ff]"
+        className="nav-reading-progress"
         style={{ scaleX: scrollYProgress }}
       />
       <div className="relative mx-auto flex w-full max-w-7xl items-center gap-3">
@@ -99,20 +91,24 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <p className="flex cursor-pointer text-[18px] font-bold tracking-[0.16em] text-white">
+          <p className="flex cursor-pointer text-[15px] font-bold tracking-[0.12em] text-white sm:text-[17px]">
             ሄኖክ · ܚܢܘܟ
           </p>
         </Link>
 
-        <ul className="hidden list-none flex-row gap-6 lg:flex">
+        <ul className="hidden list-none flex-row items-center gap-1 lg:flex">
           {navLinks.map((nav) => (
             <li
               key={nav.id}
               className={`${
                 active === nav.id ? "text-white" : "text-secondary"
-              } cursor-pointer text-[18px] font-medium hover:text-white`}
+              } cursor-pointer text-sm font-medium`}
             >
-              <a href={`#${nav.id}`} aria-current={active === nav.id ? "location" : undefined}>
+              <a
+                className="nav-link"
+                href={`#${nav.id}`}
+                aria-current={active === nav.id ? "location" : undefined}
+              >
                 {nav.title}
               </a>
             </li>
@@ -142,9 +138,9 @@ const Navbar = () => {
             id="mobile-navigation"
             className={`${
               !toggle ? "hidden" : "flex"
-            } black-gradient absolute right-0 top-12 z-10 my-2 min-w-[140px] rounded-xl p-6`}
+            } nav-mobile-panel absolute right-0 top-14 z-10 min-w-[200px] rounded-2xl p-2`}
           >
-            <ul className="flex flex-1 list-none flex-col items-center justify-end gap-4 text-center">
+            <ul className="flex flex-1 list-none flex-col gap-1">
               {navLinks.map((nav) => (
                 <li
                   key={nav.id}
@@ -153,6 +149,7 @@ const Navbar = () => {
                   }`}
                 >
                   <a
+                    className="nav-link"
                     href={`#${nav.id}`}
                     aria-current={active === nav.id ? "location" : undefined}
                     onClick={() => setToggle(false)}

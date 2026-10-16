@@ -13,6 +13,7 @@ import {
 } from "./components";
 import { MotionConfig } from "framer-motion";
 import DecorativeCanvas from "./components/layout/DecorativeCanvas";
+import Footer from "./components/layout/Footer";
 import { useEffect } from "react";
 import { config } from "./constants/config";
 
@@ -48,6 +49,7 @@ const App = () => {
               </div>
             </div>
           </main>
+          <Footer />
         </div>
       </MotionConfig>
     </BrowserRouter>

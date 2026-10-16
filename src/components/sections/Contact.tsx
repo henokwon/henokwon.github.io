@@ -88,20 +88,22 @@ const Contact = () => {
 
       <motion.div
         variants={slideIn("right", "tween", 0.2, 1)}
-        className="relative h-[300px] min-w-0 sm:h-[380px] lg:h-auto lg:min-h-[420px]"
+        className="contact-orbit relative h-[300px] min-w-0 overflow-hidden rounded-3xl sm:h-[380px] lg:h-auto lg:min-h-[420px]"
       >
         <div className="absolute inset-0 rounded-full border border-[#915EFF]/20 blur-[1px]" />
         <motion.div
           aria-hidden="true"
           animate={{ rotate: 360 }}
+          style={{ x: "-50%", y: "-50%" }}
           transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-          className="absolute left-1/2 top-1/2 h-[72%] w-[72%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#00cea8]/30"
+          className="absolute left-1/2 top-1/2 h-[72%] w-[72%] rounded-full border border-dashed border-[#00cea8]/30"
         />
         <motion.div
           aria-hidden="true"
           animate={{ rotate: -360 }}
+          style={{ x: "-50%", y: "-50%" }}
           transition={{ duration: 26, repeat: Infinity, ease: "linear" }}
-          className="absolute left-1/2 top-1/2 h-[88%] w-[88%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#bf61ff]/20"
+          className="absolute left-1/2 top-1/2 h-[88%] w-[88%] rounded-full border border-dashed border-[#bf61ff]/20"
         />
         <div className="absolute left-8 top-10 z-10 rounded-full border border-white/10 bg-black/30 px-4 py-2 text-[12px] font-semibold text-white backdrop-blur">
           WhatsApp ready
