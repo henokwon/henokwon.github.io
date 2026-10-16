@@ -194,7 +194,7 @@ const experiences: TExperience[] = [
     ],
   },
   {
-    title: "Senior Software Engineer | Tech Lead",
+    title: "Senior DevOps Engineer",
     companyName: "ETPlus",
     icon: etplus,
     iconBg: "#ffffff",
@@ -224,13 +224,14 @@ const experiences: TExperience[] = [
     },
   },
   {
-    title: "DevSecOps & Backend Consultant",
+    title: "Full Stack Software Development",
     companyName: "Freelance",
     icon: freelance,
     iconBg: "#0b1228",
     date: "Mar 2019 - Present",
     points: [
-      "Designed and delivered backend-heavy web platforms with secure API integrations, authentication flows, and production deployment practices.",
+      "Provided freelance software development services for HorizonTech ICT Solutions.",
+      "Designed and delivered full-stack web platforms with frontend interfaces, secure API integrations, authentication flows, and production deployment practices.",
       "Built automation around deployment, environment configuration, monitoring, and release handoffs to reduce manual operational work.",
       "Modernized legacy workflows with pragmatic architecture choices across Node.js, Django, React, databases, and Linux-based hosting environments.",
       "Advised teams on reliability basics that matter in production: backups, logging, access control, incident response, and maintainable infrastructure.",
