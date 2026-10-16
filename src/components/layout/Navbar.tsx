@@ -1,11 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { motion, useScroll } from "framer-motion";
 
 import { styles } from "../../constants/styles";
 import { navLinks } from "../../constants";
 import { menu, close } from "../../assets";
 
 const Navbar = () => {
+  const { scrollYProgress } = useScroll();
   const [active, setActive] = useState<string | null>();
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -73,6 +75,11 @@ const Navbar = () => {
         scrolled ? "bg-primary" : "bg-transparent"
       }`}
     >
+      <motion.div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 h-[2px] origin-left bg-gradient-to-r from-[#915EFF] via-[#00cea8] to-[#bf61ff]"
+        style={{ scaleX: scrollYProgress }}
+      />
       <div className="relative mx-auto flex w-full max-w-7xl items-center gap-3">
         <Link
           to="/"

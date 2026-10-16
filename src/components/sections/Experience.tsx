@@ -38,7 +38,9 @@ const ExperienceCard: React.FC<TExperience> = (experience) => {
       <div>
         <div className="flex flex-col items-center gap-3 text-center">
           <div>
-            <h3 className="text-[24px] font-bold leading-tight text-white">{experience.title}</h3>
+            <h3 className="text-balance text-[clamp(1.125rem,1.8vw,1.375rem)] font-bold leading-snug text-white">
+              {experience.title}
+            </h3>
             <p className="text-secondary mt-1 text-[16px] font-semibold" style={{ margin: 0 }}>
               {experience.companyName}
             </p>
@@ -49,16 +51,16 @@ const ExperienceCard: React.FC<TExperience> = (experience) => {
         </div>
       </div>
 
-      <div className="mt-6 grid gap-3">
+      <div className="mt-4 grid gap-2">
         {experience.points.map((point, index) => (
           <div
             key={`experience-point-${index}`}
-            className="group grid gap-3 rounded-2xl border border-white/10 bg-white/[0.035] p-3 text-center transition-all duration-300 hover:-translate-y-0.5 hover:border-[#00cea8]/30 hover:bg-[#00cea8]/[0.055] sm:grid-cols-[34px_1fr] sm:text-left"
+            className="group grid grid-cols-[24px_minmax(0,1fr)] items-start gap-2 rounded-xl border border-white/10 bg-white/[0.035] p-3 text-left transition-colors duration-300 hover:border-[#00cea8]/30 hover:bg-[#00cea8]/[0.055]"
           >
-            <span className="mx-auto flex h-8 w-8 items-center justify-center rounded-xl border border-[#915EFF]/25 bg-[#915EFF]/10 font-mono text-[14px] font-black text-[#9fffea] transition-colors group-hover:border-[#00cea8]/35 sm:mx-0">
+            <span className="flex h-6 w-6 items-center justify-center rounded-lg border border-[#915EFF]/25 bg-[#915EFF]/10 font-mono text-xs font-black text-[#9fffea] transition-colors group-hover:border-[#00cea8]/35">
               {experienceSignals[index % experienceSignals.length]}
             </span>
-            <p className="text-white-100 text-[13px] leading-7">{point}</p>
+            <p className="experience-point text-white-100">{point}</p>
           </div>
         ))}
       </div>
@@ -78,7 +80,7 @@ const Experience = () => {
     <>
       <Header useMotion={true} {...config.sections.experience} />
 
-      <div ref={timelineRef} className="relative mt-20 flex flex-col">
+      <div ref={timelineRef} className="relative mt-7 flex flex-col sm:mt-9">
         <div className="experience-climber-track" aria-hidden="true">
           <motion.div style={{ y: climberY }} className="experience-climber">
             <span className="experience-climber-head" />

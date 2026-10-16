@@ -61,11 +61,11 @@ const services: TService[] = [
     icon: mobile,
   },
   {
-    title: "Backend Platform Architecture",
+    title: "Platform Architecture",
     icon: backend,
   },
   {
-    title: "Security, Monitoring & Reliability",
+    title: "Monitoring & Reliability",
     icon: creator,
   },
 ];

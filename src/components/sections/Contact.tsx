@@ -32,20 +32,20 @@ const contactChannels = [
 
 const Contact = () => {
   return (
-    <div className="flex flex-col-reverse gap-10 overflow-hidden xl:mt-12 xl:flex-row">
+    <div className="grid items-stretch gap-5 lg:grid-cols-2">
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
-        className="bg-black-100 relative flex-[0.75] overflow-hidden rounded-2xl p-8"
+        className="bg-black-100 relative min-w-0 overflow-hidden rounded-2xl p-5 sm:p-7"
       >
         <div className="green-pink-gradient absolute -left-24 top-10 h-56 w-56 rounded-full opacity-10 blur-3xl" />
         <div className="absolute bottom-8 right-8 h-24 w-24 rounded-full border border-[#915EFF]/20" />
         <div className="relative">
           <Header useMotion={false} {...config.contact} />
-          <p className="text-secondary mx-auto mt-6 max-w-lg text-center text-[16px] leading-[28px]">
+          <p className="section-copy text-secondary mx-auto mt-4 max-w-lg text-center">
             {config.contact.content}
           </p>
 
-          <div className="mt-10 grid gap-4">
+          <div className="mt-6 grid gap-3">
             {contactChannels.map((channel, index) => (
               <motion.a
                 key={channel.name}
@@ -54,9 +54,10 @@ const Contact = () => {
                 rel="noreferrer"
                 initial={{ opacity: 0, x: -24 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.12, duration: 0.45 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ delay: index * 0.08, duration: 0.4 }}
                 whileHover={{ y: -4, scale: 1.01 }}
-                className="border-white/10 bg-tertiary/80 group flex flex-col items-center gap-4 rounded-2xl border p-5 text-center backdrop-blur sm:flex-row sm:text-left"
+                className="contact-channel border-white/10 bg-tertiary/80 group flex min-w-0 flex-wrap items-center justify-center gap-3 rounded-xl border p-4 text-center backdrop-blur sm:justify-start sm:text-left"
               >
                 <span
                   className={`bg-gradient-to-br ${channel.accent} flex h-14 w-14 items-center justify-center rounded-2xl text-white shadow-lg shadow-black/30`}
@@ -65,11 +66,11 @@ const Contact = () => {
                     {channel.icon}
                   </svg>
                 </span>
-                <span className="flex-1">
+                <span className="min-w-0 flex-1">
                   <span className="block text-[18px] font-bold text-white">{channel.name}</span>
                   <span className="text-secondary mt-1 block text-[14px]">{channel.label}</span>
                 </span>
-                <span className="text-secondary group-hover:text-white">{phoneNumber}</span>
+                <span className="text-secondary text-xs group-hover:text-white">{phoneNumber}</span>
               </motion.a>
             ))}
           </div>
@@ -87,7 +88,7 @@ const Contact = () => {
 
       <motion.div
         variants={slideIn("right", "tween", 0.2, 1)}
-        className="relative h-[360px] md:h-[560px] xl:h-auto xl:flex-1"
+        className="relative h-[300px] min-w-0 sm:h-[380px] lg:h-auto lg:min-h-[420px]"
       >
         <div className="absolute inset-0 rounded-full border border-[#915EFF]/20 blur-[1px]" />
         <motion.div

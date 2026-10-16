@@ -7,21 +7,16 @@ interface Props {
   idName: string;
 }
 
-const SectionWrapper = (
-  Component: Props["Component"],
-  idName: Props["idName"]
-) =>
+const SectionWrapper = (Component: Props["Component"], idName: Props["idName"]) =>
   function HOC() {
     return (
       <motion.section
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.25 }}
-        className={`${styles.padding} relative z-0 mx-auto max-w-7xl`}
+        viewport={{ once: true, amount: "some", margin: "0px 0px -48px 0px" }}
+        className={`${styles.padding} portfolio-section relative z-0 mx-auto max-w-7xl`}
         id={idName}
       >
-        <span className="hash-span">&nbsp;</span>
-
         <Component />
       </motion.section>
     );

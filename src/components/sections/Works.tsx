@@ -31,10 +31,10 @@ const ProjectCard: React.FC<{ index: number } & TProject> = ({
         glareColor="#aaa6c3"
       >
         <article
-          className="green-pink-gradient group h-full w-full rounded-2xl p-[1px]"
+          className="project-card green-pink-gradient group h-full w-full rounded-2xl p-[1px]"
           data-signal={signal}
         >
-          <div className="bg-tertiary flex h-full min-h-[280px] flex-col justify-between rounded-2xl p-6">
+          <div className="bg-tertiary flex h-full min-h-[280px] flex-col rounded-2xl p-5 sm:p-6">
             <div>
               <div className="mb-5 flex items-center justify-between">
                 <span className="blue-text-gradient text-[13px] font-bold tracking-[0.25em]">
@@ -60,10 +60,12 @@ const ProjectCard: React.FC<{ index: number } & TProject> = ({
                   </a>
                 )}
               </div>
-              <h3 className="text-[22px] font-bold leading-tight text-white">{name}</h3>
+              <h3 className="text-[clamp(1.125rem,1.8vw,1.375rem)] font-bold leading-snug text-white">
+                {name}
+              </h3>
               <p className="text-secondary mt-3 text-[14px] leading-[24px]">{description}</p>
             </div>
-            <div className="mt-5 flex flex-wrap gap-2">
+            <div className="mt-auto flex flex-wrap gap-x-3 gap-y-1 pt-5">
               {tags.map((tag) => (
                 <p key={tag.name} className={`text-[13px] ${tag.color}`}>
                   #{tag.name}
@@ -71,7 +73,7 @@ const ProjectCard: React.FC<{ index: number } & TProject> = ({
               ))}
             </div>
             {signal !== undefined && (
-              <p className="mt-5 border-t border-white/10 pt-4 text-[11px] font-bold uppercase tracking-[0.24em] text-[#00cea8]/0 transition-colors duration-300 group-hover:text-[#00cea8]/70 group-focus-within:text-[#00cea8]/70">
+              <p className="mt-4 border-t border-white/10 pt-3 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#00cea8]/65 transition-colors duration-300 group-hover:text-[#9fffea] group-focus-within:text-[#9fffea]">
                 signal: {signal}
               </p>
             )}
@@ -90,13 +92,13 @@ const Works = () => {
       <div className="flex w-full justify-center">
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
-          className="text-secondary mt-3 max-w-3xl text-center text-[17px] leading-[30px]"
+          className="section-copy text-secondary mt-4 max-w-3xl text-center"
         >
           {config.sections.works.content}
         </motion.p>
       </div>
 
-      <div className="mt-14 grid justify-items-center gap-6 md:grid-cols-2 xl:grid-cols-3">
+      <div className="mt-7 grid justify-items-center gap-4 sm:mt-9 md:grid-cols-2 xl:grid-cols-3">
         {projects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}

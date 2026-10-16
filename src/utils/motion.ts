@@ -1,18 +1,19 @@
 import type { TMotion } from "../types";
 import { Variants } from "framer-motion";
 
-export const textVariant = () => {
+export const textVariant = (): Variants => {
   return {
     hidden: {
-      y: -50,
+      y: 20,
       opacity: 0,
     },
     show: {
       y: 0,
       opacity: 1,
       transition: {
-        type: "spring",
-        duration: 1.25,
+        type: "tween",
+        duration: 0.55,
+        ease: [0.22, 1, 0.36, 1],
       },
     },
   };
@@ -26,8 +27,8 @@ export const fadeIn = (
 ): Variants => {
   return {
     hidden: {
-      x: direction === "left" ? 100 : direction === "right" ? -100 : 0,
-      y: direction === "up" ? 100 : direction === "down" ? -100 : 0,
+      x: direction === "left" ? 28 : direction === "right" ? -28 : 0,
+      y: direction === "up" ? 28 : direction === "down" ? -28 : 0,
       opacity: 0,
     },
     show: {
@@ -35,19 +36,16 @@ export const fadeIn = (
       y: 0,
       opacity: 1,
       transition: {
-        type,
-        delay,
-        duration,
-        ease: "easeOut",
+        type: type || "tween",
+        delay: Math.min(delay, 0.3),
+        duration: Math.min(duration, 0.65),
+        ease: [0.22, 1, 0.36, 1],
       },
     },
   };
 };
 
-export const zoomIn = (
-  delay: TMotion["delay"],
-  duration: TMotion["duration"]
-) => {
+export const zoomIn = (delay: TMotion["delay"], duration: TMotion["duration"]) => {
   return {
     hidden: {
       scale: 0,
@@ -74,8 +72,8 @@ export const slideIn = (
 ) => {
   return {
     hidden: {
-      x: direction === "left" ? "-100%" : direction === "right" ? "100%" : 0,
-      y: direction === "up" ? "100%" : direction === "down" ? "100%" : 0,
+      x: direction === "left" ? -32 : direction === "right" ? 32 : 0,
+      y: direction === "up" ? 32 : direction === "down" ? -32 : 0,
     },
     show: {
       x: 0,

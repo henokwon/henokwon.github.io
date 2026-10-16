@@ -16,16 +16,25 @@ interface IServiceCard {
 
 const ServiceCard: React.FC<IServiceCard> = ({ index, title, icon }) => {
   return (
-    <Tilt glareEnable tiltEnable tiltMaxAngleX={30} tiltMaxAngleY={30} glareColor="#aaa6c3">
-      <div className="xs:w-[250px] w-full">
+    <Tilt
+      className="h-full min-w-0"
+      glareEnable
+      tiltEnable
+      tiltMaxAngleX={15}
+      tiltMaxAngleY={15}
+      glareColor="#aaa6c3"
+    >
+      <div className="h-full w-full">
         <motion.div
-          variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-          className="green-pink-gradient shadow-card w-full rounded-[20px] p-[1px]"
+          variants={fadeIn("up", "tween", index * 0.08, 0.5)}
+          className="green-pink-gradient shadow-card h-full w-full rounded-[20px] p-[1px]"
         >
-          <div className="bg-tertiary flex min-h-[280px] flex-col items-center justify-evenly rounded-[20px] px-12 py-5">
-            <img src={icon} alt="" className="h-16 w-16 object-contain" />
+          <div className="service-card bg-tertiary flex h-full min-h-[175px] flex-col items-center justify-center gap-5 rounded-[20px] px-3 py-6 sm:min-h-[200px] sm:px-5">
+            <img src={icon} alt="" className="h-12 w-12 object-contain sm:h-14 sm:w-14" />
 
-            <h3 className="text-center text-[20px] font-bold text-white">{title}</h3>
+            <h3 className="max-w-[18ch] text-center text-[clamp(.875rem,1.6vw,1.125rem)] font-semibold leading-snug text-white">
+              {title}
+            </h3>
           </div>
         </motion.div>
       </div>
@@ -40,12 +49,12 @@ const About = () => {
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
-        className="text-secondary mx-auto mt-4 max-w-3xl text-center text-[17px] leading-[30px]"
+        className="section-copy text-secondary mx-auto mt-4 max-w-3xl text-center"
       >
         {config.sections.about.content}
       </motion.p>
 
-      <div className="mt-20 flex flex-wrap justify-center gap-10">
+      <div className="mt-7 grid grid-cols-2 gap-3 sm:mt-9 sm:gap-5 lg:grid-cols-4">
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}

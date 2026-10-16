@@ -12,29 +12,29 @@ const runtimeSignals = [
 
 const Hero = () => {
   return (
-    <section className="relative mx-auto min-h-screen w-full pb-28 pt-[100px]">
+    <section className="hero-section relative mx-auto w-full">
       <div className="hero-runtime-aura" />
-      <div className={`relative z-10 mx-auto max-w-7xl ${styles.paddingX}`}>
-        <div className="flex w-full flex-col items-center text-center">
-          <div className="max-w-4xl">
+      <div className={`relative z-10 mx-auto w-full max-w-7xl ${styles.paddingX}`}>
+        <div className="grid w-full items-center gap-7 text-center lg:grid-cols-2 lg:gap-10 lg:text-left">
+          <div className="min-w-0">
             <h1 className={`${styles.heroHeadText} text-white`}>
               Hi, I'm <span className="text-[#915EFF]">{config.hero.name}</span>
             </h1>
             <p className={`${styles.heroSubText} text-white-100 mt-2`}>{config.hero.p[0]}</p>
-            <p className="text-secondary mx-auto mt-4 max-w-xl text-base leading-7">
+            <p className="text-secondary mx-auto mt-4 max-w-xl text-[15px] leading-7 lg:mx-0 lg:text-base">
               I build secure backend platforms, automate cloud delivery, and make production systems
               reliable and observable.
             </p>
-            <div className="mt-6 flex flex-wrap justify-center gap-4">
+            <div className="mt-6 flex flex-wrap justify-center gap-3 lg:justify-start">
               <a
                 href="#projects"
-                className="rounded-xl bg-[#915EFF] px-6 py-3 font-semibold text-white"
+                className="portfolio-button rounded-xl bg-[#915EFF] px-5 py-3 text-sm font-semibold text-white"
               >
                 Explore projects
               </a>
               <a
                 href="#contact"
-                className="rounded-xl border border-white/30 px-6 py-3 font-semibold text-white"
+                className="portfolio-button rounded-xl border border-white/30 px-5 py-3 text-sm font-semibold text-white"
               >
                 Get in touch
               </a>
@@ -45,7 +45,7 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.9, y: 28 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ delay: 0.55, duration: 0.9 }}
-            className="hero-theory-shell mt-8 w-full"
+            className="hero-theory-shell mx-auto w-full min-w-0"
           >
             <div className="hero-theory-console">
               <div className="hero-console-bar">
@@ -57,7 +57,7 @@ const Hero = () => {
                 <DecorativeCanvas scene="theory" />
               </div>
 
-              <div className="mt-4 grid gap-3 sm:grid-cols-3">
+              <div className="mt-3 grid grid-cols-3 gap-2 sm:gap-3">
                 {runtimeSignals.map(([number, title, description]) => (
                   <div key={title} className="hero-signal-row">
                     <span>{number}</span>

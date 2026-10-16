@@ -19,11 +19,11 @@ export const Header: React.FC<IHeader> = ({ useMotion, p, h2 }) => {
   );
 
   return useMotion === true ? (
-    <motion.div variants={textVariant()} className="text-center">
+    <motion.div variants={textVariant()} className="section-heading mx-auto max-w-3xl text-center">
       <Content />
     </motion.div>
   ) : (
-    <div className="text-center">
+    <div className="section-heading mx-auto max-w-3xl text-center">
       <Content />
     </div>
   );
