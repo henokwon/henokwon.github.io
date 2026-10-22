@@ -837,6 +837,10 @@
   animation: simulationDrift 9s linear infinite;
 }
 
+.simulation-physics-field * {
+  pointer-events: none !important;
+}
+
 .simulation-physics-field {
   pointer-events: none;
   position: fixed;
