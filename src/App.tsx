@@ -6,6 +6,7 @@ import {
   Contact,
   Experience,
   Certifications,
+  Organizations,
   Hero,
   Navbar,
   SimulationLayer,
@@ -40,6 +41,7 @@ const App = () => {
           <main id="main-content" tabIndex={-1}>
             <About />
             <Experience />
+            <Organizations />
             <Certifications />
             <Tech />
             <Works />

@@ -4,6 +4,7 @@ import About from "./sections/About";
 import Tech from "./sections/Tech";
 import Experience from "./sections/Experience";
 import Certifications from "./sections/Certifications";
+import Organizations from "./sections/Organizations";
 import Works from "./sections/Works";
 import Feedbacks from "./sections/Feedbacks";
 import Contact from "./sections/Contact";
@@ -18,6 +19,7 @@ export {
   Tech,
   Experience,
   Certifications,
+  Organizations,
   Works,
   Feedbacks,
   Contact,

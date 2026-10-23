@@ -1,0 +1,105 @@
+// Project associations supplied by Henok; these do not imply direct contracts or endorsements.
+export const organizations = [
+  {
+    name: "Commercial Bank of Ethiopia",
+    short: "CBE",
+    context: "Ethiopia · Banking",
+    group: "Project & research",
+  },
+  {
+    name: "Dashen Bank",
+    short: "Dashen",
+    context: "Ethiopia · Banking",
+    group: "Project & research",
+  },
+  {
+    name: "Ministry of Health Ethiopia",
+    short: "MoH ET",
+    context: "Ethiopia · Public health",
+    group: "Project & research",
+  },
+  {
+    name: "INSA Ethiopia",
+    short: "INSA",
+    context: "Ethiopia · Information security",
+    group: "Project & research",
+  },
+  {
+    name: "Addis Ababa Science and Technology University",
+    short: "AASTU",
+    context: "Ethiopia · Research & education",
+    group: "Project & research",
+  },
+  {
+    name: "Artificial Intelligence for Development",
+    short: "AI4D",
+    context: "Africa · AI research & fellowship",
+    group: "Project & research",
+  },
+  {
+    name: "NIDA Rwanda",
+    short: "NIDA",
+    context: "Rwanda · Digital identity",
+    group: "Project & research",
+  },
+  {
+    name: "MINIJUST Rwanda",
+    short: "MINIJUST",
+    context: "Rwanda · Justice",
+    group: "Project & research",
+  },
+  {
+    name: "GIZ Rwanda",
+    short: "GIZ",
+    context: "Rwanda · Development cooperation",
+    group: "Project & research",
+  },
+  {
+    name: "Ministry of Health Rwanda",
+    short: "MoH RW",
+    context: "Rwanda · Public health",
+    group: "Project & research",
+  },
+  {
+    name: "RISA Rwanda",
+    short: "RISA",
+    context: "Rwanda · Digital government",
+    group: "Project & research",
+  },
+  {
+    name: "VMware",
+    short: "VMware",
+    context: "Virtualization & cloud",
+    group: "Technology ecosystem",
+  },
+  {
+    name: "Lenovo",
+    short: "Lenovo",
+    context: "Enterprise infrastructure",
+    group: "Technology ecosystem",
+  },
+  {
+    name: "Nutanix",
+    short: "Nutanix",
+    context: "Hybrid cloud infrastructure",
+    group: "Technology ecosystem",
+  },
+  {
+    name: "Dell",
+    short: "Dell",
+    context: "Enterprise infrastructure",
+    group: "Technology ecosystem",
+  },
+  {
+    name: "Oracle",
+    short: "Oracle",
+    context: "Enterprise technology",
+    group: "Technology ecosystem",
+  },
+  {
+    name: "HPE",
+    short: "HPE",
+    context: "Enterprise infrastructure",
+    group: "Technology ecosystem",
+  },
+];

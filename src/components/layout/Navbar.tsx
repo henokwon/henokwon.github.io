@@ -54,7 +54,7 @@ const Navbar = () => {
       if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 4) {
         sectionId = "contact";
       }
-      setActive(sectionId === "tech" || sectionId === "projects" ? "work" : sectionId);
+      setActive(["tech", "projects", "organizations"].includes(sectionId) ? "work" : sectionId);
     };
 
     window.addEventListener("scroll", navbarHighlighter);
